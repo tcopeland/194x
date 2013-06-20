@@ -8,10 +8,7 @@ void Player::draw() {
 }
 
 void Player::update() {
-	if (m_x > 0) {
-		m_x -= 1;
-	}
-	m_currentFrame = (((SDL_GetTicks() / 100) % 6));
+	m_currentFrame = (((SDL_GetTicks() / 100) % 3));
 }
 
 void Player::clean() {}

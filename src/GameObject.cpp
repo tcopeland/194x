@@ -5,6 +5,7 @@
 GameObject::GameObject(const LoaderParams* pParams) {
 	m_x = pParams->getX();
 	m_y = pParams->getY();
+	m_offset = pParams->getOffset();
 	m_width = pParams->getWidth();
 	m_height = pParams->getHeight();
 	m_textureID = pParams->getTextureID();
@@ -13,7 +14,7 @@ GameObject::GameObject(const LoaderParams* pParams) {
 }
 
 void GameObject::draw() {
-	TheTextureManager::Instance()->drawFrame(m_textureID, m_x, m_y, m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer());
+	TheTextureManager::Instance()->drawFrame(m_textureID, m_offset, m_x, m_y, m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer());
 }
 
 void GameObject::update() {

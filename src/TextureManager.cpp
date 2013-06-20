@@ -28,10 +28,10 @@ void TextureManager::draw(std::string id, int x, int y, int w, int h, SDL_Render
 	SDL_RenderCopyEx(pRenderer, m_textureMap[id], &srcRect, &destRect, 0, 0, flip);
 }
 
-void TextureManager::drawFrame(std::string id, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer* pRenderer, SDL_RendererFlip flip) {
+void TextureManager::drawFrame(std::string id, int offset, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer* pRenderer, SDL_RendererFlip flip) {
 	SDL_Rect srcRect;
 	SDL_Rect destRect;
-	srcRect.x = currentFrame * w;
+	srcRect.x = offset + (currentFrame * w);
 	srcRect.y = h * (currentRow - 1);
 	srcRect.w = destRect.w = w;
 	srcRect.h = destRect.h = h;
