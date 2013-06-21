@@ -4,6 +4,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "TextureManager.h"
+#include "InputHandler.h"
 #include "GameObject.h"
 #include "Player.h"
 #include <iostream>
@@ -31,6 +32,7 @@ public:
 	void handleEvents();
 	void clean();
 	void update();
+	void quit();
 	
 	bool running() {
 		return m_bRunning;

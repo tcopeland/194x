@@ -29,20 +29,15 @@ void Game::render() {
 }
 
 void Game::handleEvents() {
-	SDL_Event event;
-	if (SDL_PollEvent(&event)) {
-		switch (event.type) {
-			case SDL_QUIT:
-				m_bRunning = false;
-				break;
-			default:
-				break;
-		}
-	}
+	InputHandler::Instance()->update();
 }
 
 void Game::clean() {
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_Quit();
+}
+
+void Game::quit() {
+	m_bRunning = false;
 }
