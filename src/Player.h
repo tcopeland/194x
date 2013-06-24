@@ -2,6 +2,7 @@
 #define __PLAYER__
 
 #include "GameObject.h"
+#include "InputHandler.h"
 
 class Player : public GameObject {
 
@@ -12,6 +13,10 @@ public:
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
+	
+private:
+	
+	void handleInput();
 	
 };
 

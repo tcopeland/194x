@@ -20,12 +20,17 @@ public:
 	
 	void update();
 	void clean();
+	bool isKeyDown(SDL_Scancode key);
 	
 private:
 	
 	~InputHandler();
 	static InputHandler* s_pInstance;
 	std::vector<bool> m_mouseButtonStates;
+	Uint8* m_keystates;
+	
+	void onKeyUp();
+	void onKeyDown();
 };
 
 

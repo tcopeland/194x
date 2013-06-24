@@ -7,6 +7,7 @@
 #include "InputHandler.h"
 #include "GameObject.h"
 #include "Player.h"
+#include "Vector2D.h"
 #include <iostream>
 #include <vector>
 
