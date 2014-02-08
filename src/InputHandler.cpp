@@ -3,7 +3,7 @@
 InputHandler* InputHandler::s_pInstance = 0;
 
 void InputHandler::update() {
-	m_keystates = SDL_GetKeyboardState(0);
+	m_keystates = (Uint8 *)SDL_GetKeyboardState(0);
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
 		switch (event.type) {
