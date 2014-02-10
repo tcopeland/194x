@@ -1,4 +1,4 @@
-A clone of the 2D top-to-bottom scroller 1943.
+A clone of the 2D top-to-bottom scroller "1943".
 
 You are playing 194x:
 

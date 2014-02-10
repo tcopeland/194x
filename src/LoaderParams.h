@@ -7,6 +7,9 @@ class LoaderParams {
 	
 public:
 	
+	// TODO this is mixing the position on the screen (x,y) with the position
+	// in the spritesheet (offset, width, height)
+	// Also, how do you specify a vertical offset?
 	LoaderParams(int offset, int x, int y, int width, int height, std::string textureID) : m_offset(offset), m_x(x), m_y(y), m_width(width), m_height(height), m_textureID(textureID) {}
 	~LoaderParams() {}
 	

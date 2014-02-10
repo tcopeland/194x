@@ -32,8 +32,14 @@ void TextureManager::drawFrame(std::string id, int offset, int x, int y, int w, 
 	SDL_Rect srcRect;
 	SDL_Rect destRect;
 	srcRect.x = offset + (currentFrame * w);
-	srcRect.y = h * (currentRow - 1);
-	srcRect.w = destRect.w = w;
+	// Adding 4 pixels here because airplane images
+	// have a top border margin
+	// TODO parameterize this
+	srcRect.y = h * (currentRow - 1) + 4;
+	// Subtracting two pixels here because the airplane images
+	// have a white border line.
+	// TODO does this hold for all images?
+	srcRect.w = destRect.w = w-2;
 	srcRect.h = destRect.h = h;
 	destRect.x = x;
 	destRect.y = y;

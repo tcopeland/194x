@@ -9,7 +9,7 @@ bool Game::init(std::string title, int xpos, int ypos, int width, int height) {
 	SDL_SetRenderDrawColor(m_pRenderer, 0, 100, 220, 255);
 	TheTextureManager::Instance()->load("assets/1945.png", "1945", m_pRenderer);
 	// I need metadata about the spritesheet
-	m_gameObjects.push_back(new Player(new LoaderParams(600, 350, 450, 99, 100, "1945")));
+	m_gameObjects.push_back(new Player(new LoaderParams(598, 350, 450, 99, 98, "1945")));
 	m_bRunning = true;
 	return true;
 }
