@@ -1,13 +1,13 @@
 A clone of the 2D top-to-bottom scroller "1943".
 
-You are playing 194x:
+#### You are playing 194x
 
 From a terminal:
 
 make
 ./194x
 
-You are modifying 194x:
+#### You are modifying 194x
 
 Make sure you using the clang on OS X, not some random GCC version which you installed in /usr/local.  Otherwise you might get errors about a lack of support for `-fpascal-strings` and the inability of GCC to find an Objective-C compiler.
 
@@ -18,7 +18,20 @@ I generated them with:
 cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 ```
 
-Some helpful links:
+#### TODO 
+Use correct image for player
+Make player sprite image match background color
+Fire bullet when player hits spacebar
+Make sound when player fires bullet
+Enemy plane onscreen, not affected by bullets
+Enemy plane moves
+Enemy plane disappears when hit by bullet
+Enemy plane explodes when hit by bullet
+Score appears at the top of the screen
+Score increments when enemy destroyed
+
+
+#### Some helpful links:
 
 http://www.sdltutorials.com/sdl-tutorial-basics
 http://wiki.libsdl.org/moin.fcg/SDL1.2Tutorials
@@ -31,3 +44,5 @@ Art:
 http://www.widgetworx.com/widgetworx/portfolio/spritelib.html
 http://opengameart.org/art-search?keys=ww2
 
+Demo:
+http://www.dailymotion.com/video/xyr530_1942-arcade-demo_videogames
