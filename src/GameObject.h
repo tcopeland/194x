@@ -15,7 +15,8 @@ public:
 	
 protected:
 	
-	int m_offset;
+	int m_horizontalOffset;
+	int m_verticalOffset;
 	int m_width;
 	int m_height;
 	int m_currentRow;

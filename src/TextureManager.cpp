@@ -28,14 +28,11 @@ void TextureManager::draw(std::string id, int x, int y, int w, int h, SDL_Render
 	SDL_RenderCopyEx(pRenderer, m_textureMap[id], &srcRect, &destRect, 0, 0, flip);
 }
 
-void TextureManager::drawFrame(std::string id, int offset, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer* pRenderer, SDL_RendererFlip flip) {
+void TextureManager::drawFrame(std::string id, int horizontalOffset, int verticalOffset, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer* pRenderer, SDL_RendererFlip flip) {
 	SDL_Rect srcRect;
 	SDL_Rect destRect;
-	srcRect.x = offset + (currentFrame * w);
-	// Adding 4 pixels here because airplane images
-	// have a top border margin
-	// TODO parameterize this
-	srcRect.y = h * (currentRow - 1) + 4;
+	srcRect.x = horizontalOffset + (currentFrame * w);
+	srcRect.y = h * (currentRow - 1) + verticalOffset;
 	// Subtracting two pixels here because the airplane images
 	// have a white border line.
 	// TODO does this hold for all images?
