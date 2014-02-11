@@ -19,15 +19,25 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 ```
 
 #### TODO 
+
 Use correct image for player
+
 Make player sprite image match background color
+
 Fire bullet when player hits spacebar
+
 Make sound when player fires bullet
+
 Enemy plane onscreen, not affected by bullets
+
 Enemy plane moves
+
 Enemy plane disappears when hit by bullet
+
 Enemy plane explodes when hit by bullet
+
 Score appears at the top of the screen
+
 Score increments when enemy destroyed
 
 
