@@ -4,8 +4,10 @@ A clone of the 2D top-to-bottom scroller "1942".
 
 From a terminal:
 
+```bash
 make
 ./194x
+```
 
 #### You are modifying 194x
 
@@ -14,32 +16,22 @@ Make sure you using the clang on OS X, not some random GCC version which you ins
 Docs on my machine are at:
 file:///Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet/html/index.html
 I generated them with:
+
 ```bash
 cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 ```
 
 #### TODO 
 
-Use correct image for player
-
-Make player sprite image match background color
-
-Fire bullet when player hits spacebar
-
-Make sound when player fires bullet
-
-Enemy plane onscreen, not affected by bullets
-
-Enemy plane moves
-
-Enemy plane disappears when hit by bullet
-
-Enemy plane explodes when hit by bullet
-
-Score appears at the top of the screen
-
-Score increments when enemy destroyed
-
+* Use correct image for player
+* Fire bullet when player hits spacebar
+* Make sound when player fires bullet
+* Enemy plane onscreen, not affected by bullets
+* Enemy plane moves
+* Enemy plane disappears when hit by bullet
+* Enemy plane explodes when hit by bullet
+* Score appears at the top of the screen
+* Score increments when enemy destroyed
 
 #### Some helpful links:
 
