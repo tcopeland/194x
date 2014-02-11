@@ -30,6 +30,9 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 * Enemy plane explodes when hit by bullet
 * Score appears at the top of the screen
 * Score increments when enemy destroyed
+* Enemy plane shoots
+* Enemy bullet affects player sprite
+* Destruction of enemy plane leaves power up
 
 #### Some helpful links:
 
