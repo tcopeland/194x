@@ -21,6 +21,8 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
+* Implement initial state - menu
+* Implement state - paused
 * Fire bullet when player hits spacebar
 * Make sound when player fires bullet
 * Enemy plane onscreen, not affected by bullets
