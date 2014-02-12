@@ -2,7 +2,7 @@
 
 Spritesheet::Spritesheet(const std::string fileName) {
   m_fileName = fileName;
-  m_sprites["player"] = new SpriteParameters(598, 4, 99, 98);
+  m_sprites["player"] = new SpriteParameters(4, 400, 66, 62);
 }
 
 std::string Spritesheet::getFilename() {

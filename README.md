@@ -21,7 +21,6 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
-* Use correct image for player
 * Fire bullet when player hits spacebar
 * Make sound when player fires bullet
 * Enemy plane onscreen, not affected by bullets
