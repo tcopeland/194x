@@ -9,7 +9,7 @@ public:
 	
 	// TODO this is mixing the position on the screen (x,y) with the position
 	// in the spritesheet (offset, width, height)
-	LoaderParams(int horizontalOffset, int verticalOffset, int x, int y, int width, int height, std::string textureID) : m_horizontalOffset(horizontalOffset), m_verticalOffset(verticalOffset), m_x(x), m_y(y), m_width(width), m_height(height), m_textureID(textureID) {}
+	LoaderParams(int horizontalOffset, int verticalOffset, int x, int y, int width, int height) : m_horizontalOffset(horizontalOffset), m_verticalOffset(verticalOffset), m_x(x), m_y(y), m_width(width), m_height(height) {}
 	~LoaderParams() {}
 	
 	int getHorizontalOffset() const { return m_horizontalOffset; }
@@ -18,7 +18,6 @@ public:
 	int getY() const { return m_y; }
 	int getWidth() const { return m_width; }
 	int getHeight() const { return m_height; }
-	std::string getTextureID() const { return m_textureID; }
 	
 private:
 	
@@ -28,7 +27,6 @@ private:
 	int m_y;
 	int m_width;
 	int m_height;
-	std::string m_textureID;
 	
 };
 

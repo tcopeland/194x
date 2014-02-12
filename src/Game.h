@@ -8,6 +8,7 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Vector2D.h"
+#include "SpriteParameters.h"
 #include <iostream>
 #include <vector>
 
