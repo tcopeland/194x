@@ -23,6 +23,7 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 * Implement initial state - menu
 * Implement state - paused
+* SpriteParameters should know how many images a sprite series is composed of, vs Player.cpp dividing ticks by 3
 * Fire bullet when player hits spacebar
 * Make sound when player fires bullet
 * Enemy plane onscreen, not affected by bullets
