@@ -9,7 +9,7 @@ bool Game::init(std::string title, int xpos, int ypos, int width, int height) {
   SDL_SetRenderDrawColor(m_pRenderer, 2, 73, 148, 255);
   Spritesheet *spritesheet = new Spritesheet("assets/1945.png");
   TheTextureManager::Instance()->load(spritesheet, m_pRenderer);
-  m_gameState = new GameState(spritesheet);
+  m_gameState = new PlayingState(spritesheet);
   m_bRunning = true;
   return true;
 }

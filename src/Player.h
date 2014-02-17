@@ -2,6 +2,7 @@
 #define __PLAYER__
 
 #include "GameObject.h"
+#include "LoaderParams.h"
 
 class Player : public GameObject {
 

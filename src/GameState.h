@@ -14,10 +14,10 @@ public:
 
   GameState(Spritesheet* pSpritesheet);
 
-  void update();
-  void draw();
+  virtual void update();
+  virtual void draw();
 
-private:
+protected:
 
   std::vector<GameObject*> m_gameObjects;
 

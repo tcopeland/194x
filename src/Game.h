@@ -9,6 +9,8 @@
 #include "Player.h"
 #include "Vector2D.h"
 #include "SpriteParameters.h"
+#include "Spritesheet.h"
+#include "PlayingState.h"
 #include "GameState.h"
 #include <iostream>
 
