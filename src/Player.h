@@ -2,7 +2,6 @@
 #define __PLAYER__
 
 #include "GameObject.h"
-#include "InputHandler.h"
 
 class Player : public GameObject {
 

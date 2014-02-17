@@ -9,8 +9,8 @@
 #include "Player.h"
 #include "Vector2D.h"
 #include "SpriteParameters.h"
+#include "GameState.h"
 #include <iostream>
-#include <vector>
 
 class Game {
 	
@@ -48,7 +48,7 @@ private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
 	bool m_bRunning;
-	std::vector<GameObject*> m_gameObjects;
+	GameState* m_gameState;
 	
 };
 

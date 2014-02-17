@@ -10,28 +10,18 @@ bool Game::init(std::string title, int xpos, int ypos, int width, int height) {
   SDL_SetRenderDrawColor(m_pRenderer, 2, 73, 148, 255);
   Spritesheet *spritesheet = new Spritesheet("assets/1945.png");
   TheTextureManager::Instance()->load(spritesheet, m_pRenderer);
-  SpriteParameters *spriteParameters = spritesheet->getSpriteParameters("player");
-  LoaderParams *loaderParams = new LoaderParams(spriteParameters->getHorizontalOffset(),
-                                                spriteParameters->getVerticalOffset(),
-                                                350, 450,
-                                                spriteParameters->getWidth(),
-                                                spriteParameters->getHeight());
-  m_gameObjects.push_back(new Player(loaderParams));
+  m_gameState = new GameState();
   m_bRunning = true;
   return true;
 }
 
 void Game::update() {
-  for (std::vector<GameObject*>::iterator i = m_gameObjects.begin(); i != m_gameObjects.end(); i++) {
-    (*i)->update();
-  }
+  m_gameState->update();
 }
 
 void Game::render() {
   SDL_RenderClear(m_pRenderer);
-  for (std::vector<GameObject*>::iterator i = m_gameObjects.begin(); i != m_gameObjects.end(); i++) {
-    (*i)->draw();
-  }
+  m_gameState->draw();
   SDL_RenderPresent(m_pRenderer);
 }
 
