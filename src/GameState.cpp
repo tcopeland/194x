@@ -1,8 +1,6 @@
 #include "GameState.h"
 
-GameState::GameState() {
-	// TODO make this an argument?
-  Spritesheet *spritesheet = new Spritesheet("assets/1945.png");
+GameState::GameState(Spritesheet* spritesheet) {
   SpriteParameters *spriteParameters = spritesheet->getSpriteParameters("player");
   LoaderParams *loaderParams = new LoaderParams(spriteParameters->getHorizontalOffset(),
                                                 spriteParameters->getVerticalOffset(),

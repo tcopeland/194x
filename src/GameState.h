@@ -13,7 +13,7 @@ class GameState {
 
 public:
 
-  GameState();
+  GameState(Spritesheet* pSpritesheet);
 
   void update();
   void draw();
