@@ -1,5 +1,4 @@
 #include "Game.h"
-#include "Spritesheet.h"
 
 Game* Game::s_pInstance = 0;
 

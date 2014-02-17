@@ -1,5 +1,4 @@
 #include "GameObject.h"
-#include "LoaderParams.h"
 #include "Game.h"
 
 GameObject::GameObject(const LoaderParams* pParams) : m_position(pParams->getX(), pParams->getY()), m_velocity(0,0), m_acceleration(0,0) {
