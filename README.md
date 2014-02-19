@@ -21,7 +21,7 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
-* Implement initial state - menu
+* Menu state's quit label should quit game when clicked
 * Implement state - paused
 * SpriteParameters should know how many images a sprite series is composed of, vs Player.cpp dividing ticks by 3
 * Fire bullet when player hits spacebar

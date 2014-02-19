@@ -11,6 +11,7 @@
 #include "SpriteParameters.h"
 #include "Spritesheet.h"
 #include "PlayingState.h"
+#include "MenuState.h"
 #include "GameState.h"
 #include <iostream>
 
