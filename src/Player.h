@@ -1,6 +1,7 @@
 #ifndef __PLAYER__
 #define __PLAYER__
 
+#include "Game.h"
 #include "GameObject.h"
 
 class Player : public GameObject {
