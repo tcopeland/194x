@@ -1,6 +1,7 @@
 #ifndef __PLAYER__
 #define __PLAYER__
 
+#include "SDL.h"
 #include "GameObject.h"
 #include "LoaderParams.h"
 
