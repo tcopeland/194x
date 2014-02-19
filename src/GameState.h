@@ -4,9 +4,6 @@
 #include <vector>
 #include "SpriteParameters.h"
 #include "LoaderParams.h"
-
-class GameState;
-
 #include "Player.h"
 #include "GameObject.h"
 #include "Spritesheet.h"

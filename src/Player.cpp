@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Game.h"
 
 Player::Player(const LoaderParams* pParams) : GameObject(pParams) {}
 
