@@ -9,7 +9,7 @@ MenuState::MenuState(Spritesheet* spritesheet) : GameState(spritesheet) {
                                                 playGameLabelSpriteParameters->getHeight())));
 
   SpriteParameters *quitLabelSpriteParameters = spritesheet->getSpriteParameters("quit_label");
-  m_gameObjects.push_back(new GameObject(new LoaderParams(quitLabelSpriteParameters->getHorizontalOffset(),
+  m_gameObjects.push_back(new QuitLabel(new LoaderParams(quitLabelSpriteParameters->getHorizontalOffset(),
                                                 quitLabelSpriteParameters->getVerticalOffset(),
                                                 300, 300,
                                                 quitLabelSpriteParameters->getWidth(),

@@ -2,6 +2,7 @@
 #define __MENU_STATE__
 
 #include "GameState.h"
+#include "QuitLabel.h"
 
 class MenuState : public GameState {
 
