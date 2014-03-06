@@ -37,3 +37,8 @@ void Game::clean() {
 void Game::quit() {
   m_bRunning = false;
 }
+
+void Game::changeToPlayingState() {
+  Spritesheet *spritesheet = new Spritesheet("assets/1945.png");
+  m_gameState = new PlayingState(spritesheet);
+}

@@ -38,6 +38,7 @@ public:
 	void clean();
 	void update();
 	void quit();
+  void changeToPlayingState();
 	
 	bool running() {
 		return m_bRunning;

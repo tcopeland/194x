@@ -2,7 +2,7 @@
 
 MenuState::MenuState(Spritesheet* spritesheet) : GameState(spritesheet) {
   SpriteParameters *playGameLabelSpriteParameters = spritesheet->getSpriteParameters("play_game_label");
-  m_gameObjects.push_back(new GameObject(new LoaderParams(playGameLabelSpriteParameters->getHorizontalOffset(),
+  m_gameObjects.push_back(new PlayLabel(new LoaderParams(playGameLabelSpriteParameters->getHorizontalOffset(),
                                                 playGameLabelSpriteParameters->getVerticalOffset(),
                                                 300, 200,
                                                 playGameLabelSpriteParameters->getWidth(),
