@@ -9,6 +9,11 @@ make
 ./194x
 ```
 
+At the menu screen:
+
+- hit 'p' to play
+- hit 'q' to quit
+
 #### You are modifying 194x
 
 Make sure you using the clang on OS X, not some random GCC version which you installed in /usr/local.  Otherwise you might get errors about a lack of support for `-fpascal-strings` and the inability of GCC to find an Objective-C compiler.
@@ -21,7 +26,6 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
-* Menu state's play label should transition to playing state when 'p' is pressed
 * Fire bullet when player hits spacebar
 * SpriteParameters should know how many images a sprite series is composed of, vs Player.cpp dividing ticks by 3
 * Implement state - paused
