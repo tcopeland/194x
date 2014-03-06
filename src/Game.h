@@ -16,44 +16,45 @@
 #include <iostream>
 
 class Game {
-	
+
 public:
-	
-	~Game() {}
-	
-	static Game* Instance() {
-		if (s_pInstance == 0) {
-			s_pInstance = new Game();
-		}
-		return s_pInstance;
-	}
-	
-	SDL_Renderer* getRenderer() const {
-		return m_pRenderer;
-	}
-	
-	bool init(std::string title, int xpos, int ypos, int width, int height);
-	void render();
-	void handleEvents();
-	void clean();
-	void update();
-	void quit();
+
+  ~Game() {}
+
+  static Game* Instance() {
+    if (s_pInstance == 0) {
+      s_pInstance = new Game();
+    }
+    return s_pInstance;
+  }
+
+  SDL_Renderer* getRenderer() const {
+    return m_pRenderer;
+  }
+
+  bool init(std::string title, int xpos, int ypos, int width, int height);
+  void render();
+  void handleEvents();
+  void clean();
+  void update();
+  void quit();
   void changeToPlayingState();
-	
-	bool running() {
-		return m_bRunning;
-	}
-	
+
+  bool running() {
+    return m_bRunning;
+  }
+
 private:
-	
-	Game() {}
-		
-	static Game* s_pInstance;
-	SDL_Window* m_pWindow;
-	SDL_Renderer* m_pRenderer;
-	bool m_bRunning;
-	GameState* m_gameState;
-	
+
+  Game() {}
+
+  static Game* s_pInstance;
+  SDL_Window* m_pWindow;
+  SDL_Renderer* m_pRenderer;
+  bool m_bRunning;
+  GameState* m_gameState;
+  Spritesheet* m_spritesheet;
+
 };
 
 typedef Game TheGame;
