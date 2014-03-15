@@ -8,6 +8,7 @@ void PlayLabel::update() {
 
 void PlayLabel::handleInput() {
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_P)) {
+    SoundManager::Instance()->play_sound("bang");
     Game::Instance()->changeToPlayingState();
   }
 }

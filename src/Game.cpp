@@ -7,6 +7,7 @@ bool Game::init(std::string title, int xpos, int ypos, int width, int height) {
   m_pWindow = SDL_CreateWindow(title.c_str(), xpos, ypos, width, height, 0);
   m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
   SDL_SetRenderDrawColor(m_pRenderer, 2, 73, 148, 255);
+  TheSoundManager::Instance()->load("/assets/bang.wav", "bang");
   m_spritesheet = new Spritesheet("assets/1945.png");
   TheTextureManager::Instance()->load(m_spritesheet, m_pRenderer);
   m_gameState = new MenuState(m_spritesheet);

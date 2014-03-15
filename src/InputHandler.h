@@ -3,6 +3,7 @@
 
 #include "SDL.h"
 #include "Game.h"
+#include "SoundManager.h"
 #include <vector>
 
 class InputHandler {

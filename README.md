@@ -42,11 +42,14 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### Some helpful links:
 
+To add new sounds, record them in audacity and export as type: WAV (Microsoft) signed 16 bit PCM
+
 http://www.sdltutorials.com/sdl-tutorial-basics
 http://wiki.libsdl.org/moin.fcg/SDL1.2Tutorials
 http://wiki.libsdl.org/moin.fcg/Tutorials
 http://lazyfoo.net/SDL_tutorials/lesson01/index2.php
 http://www.siteduzero.com/forum/sujet/sdl-conflicting-types-for-a-function-53095
+http://wiki.libsdl.org/SDL_Keycode
 
 Art:
 
