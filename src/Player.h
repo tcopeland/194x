@@ -4,6 +4,7 @@
 #include "SDL.h"
 #include "GameObject.h"
 #include "LoaderParams.h"
+#include "BulletManager.h"
 
 class Player : public GameObject {
 

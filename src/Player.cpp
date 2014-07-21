@@ -28,9 +28,9 @@ void Player::update() {
 void Player::clean() {}
 
 void Player::handleInput() {
-  // if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
-  // TODO fire bullet
-  // }
+  if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
+    BulletManager::Instance()->add_bullet(&m_position);
+  }
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT)) {
     m_velocity.setX(2);
   }
