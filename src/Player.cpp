@@ -25,11 +25,15 @@ void Player::update() {
   }
 }
 
+void Player::setBulletManager(BulletManager* bulletManager) {
+  m_bulletManager = bulletManager;
+}
+
 void Player::clean() {}
 
 void Player::handleInput() {
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
-    BulletManager::Instance()->add_bullet(&m_position);
+    m_bulletManager->add_bullet(&m_position);
   }
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT)) {
     m_velocity.setX(2);

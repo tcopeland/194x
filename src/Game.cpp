@@ -40,5 +40,8 @@ void Game::quit() {
 }
 
 void Game::changeToPlayingState() {
-  m_gameState = new PlayingState(m_spritesheet);
+  PlayingState* playingState = new PlayingState(m_spritesheet);
+  playingState->initializePlayer();
+  playingState->initializeBulletManager();
+  m_gameState = (GameState*)playingState;
 }
