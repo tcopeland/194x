@@ -9,22 +9,20 @@
 class Player : public GameObject {
 
 public:
-	
-	Player(const LoaderParams* pParams);
-	
-  // TODO what does 'virtual void' mean?
-	virtual void draw();
-	virtual void update();
-	virtual void clean();
-
+  
+  Player(const LoaderParams* pParams);
+  
+  void draw();
+  void update();
+  void clean();
   void setBulletManager(BulletManager* bulletManager);
-	
+  
 private:
-	
-	void handleInput();
+  
+  void handleInput();
 
   BulletManager* m_bulletManager;
-	
+  
 };
 
 #endif

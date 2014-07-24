@@ -13,7 +13,7 @@ public:
 
   PlayLabel(const LoaderParams* pParams);
 
-  virtual void update();
+  void update();
 
 private:
 

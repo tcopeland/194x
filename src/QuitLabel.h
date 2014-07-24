@@ -13,7 +13,7 @@ public:
 
   QuitLabel(const LoaderParams* pParams);
 
-  virtual void update();
+  void update();
 
 private:
 
