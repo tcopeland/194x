@@ -26,7 +26,8 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
-* Fire bullet when player hits spacebar
+* Bullet should appear at center of player sprite
+* Bullet should move up the screen
 * SpriteParameters should know how many images a sprite series is composed of, vs Player.cpp dividing ticks by 3
 * Implement state - paused
 * Make sound when player fires bullet

@@ -5,6 +5,7 @@ Spritesheet::Spritesheet(const std::string fileName) {
   m_sprites["player"] = new SpriteParameters(4, 400, 66, 62);
   m_sprites["play_game_label"] = new SpriteParameters(480, 385, 100, 20);
   m_sprites["quit_label"] = new SpriteParameters(480, 460, 80, 20);
+  m_sprites["bullet"] = new SpriteParameters(60, 215, 15, 15);
 }
 
 std::string Spritesheet::getFilename() {

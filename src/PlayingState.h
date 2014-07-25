@@ -12,6 +12,8 @@ public:
 
   void initializeBulletManager();
   void initializePlayer();
+  void draw();
+  void update();
 
 private:
 

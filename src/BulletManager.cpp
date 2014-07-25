@@ -1,9 +1,31 @@
 #include "BulletManager.h"
 
-void BulletManager::add_bullet(Vector2D* position) {
-  printf("BANG\n");
+BulletManager::BulletManager(Spritesheet* spritesheet) {
+  m_spritesheet = spritesheet;
 }
 
-void BulletManager::remove_bullet(GameObject* bullet) {
+void BulletManager::addBullet(Vector2D* position) {
+  SpriteParameters* bulletSpriteParameters = m_spritesheet->getSpriteParameters("bullet");
+  LoaderParams* loaderParams = new LoaderParams(bulletSpriteParameters->getHorizontalOffset(),
+                                                bulletSpriteParameters->getVerticalOffset(),
+                                                position->getX(), position->getY(),
+                                                bulletSpriteParameters->getWidth(),
+                                                bulletSpriteParameters->getHeight());
+  GameObject* bullet = new GameObject(loaderParams);
+  m_bullets.push_back(bullet);
+}
 
+void BulletManager::removeBullet(GameObject* bullet) {
+}
+
+void BulletManager::draw() {
+  for (std::vector<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
+    (*i)->draw();
+  }
+}
+
+void BulletManager::update() {
+  for (std::vector<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
+    (*i)->update();
+  }
 }

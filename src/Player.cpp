@@ -33,7 +33,7 @@ void Player::clean() {}
 
 void Player::handleInput() {
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
-    m_bulletManager->add_bullet(&m_position);
+    m_bulletManager->addBullet(&m_position);
   }
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT)) {
     m_velocity.setX(2);
