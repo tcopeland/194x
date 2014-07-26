@@ -33,7 +33,10 @@ void Player::clean() {}
 
 void Player::handleInput() {
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
-    m_bulletManager->addBullet(&m_position);
+    Vector2D* halfPlayer = new Vector2D(22, 0);
+    Vector2D newBulletPosition = m_position + *halfPlayer;
+    m_bulletManager->addBullet(&newBulletPosition);
+    SoundManager::Instance()->play_sound("bang");
   }
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT)) {
     m_velocity.setX(2);
