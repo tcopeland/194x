@@ -20,3 +20,6 @@ void GameObject::update() {
 
 void GameObject::clean() {}
 
+void GameObject::setVelocity(Vector2D velocity) {
+  m_velocity = velocity;
+}
