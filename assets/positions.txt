@@ -1,0 +1,4 @@
+player,4,400,66,62
+play_game_label,480,385,100,20
+quit_label,480,460,80,20
+bullet,60,215,15,15

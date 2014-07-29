@@ -4,21 +4,25 @@
 #include <iostream>
 #include <map>
 #include "SpriteParameters.h"
+#include <fstream>
+#include <string>
 
 class Spritesheet {
 
 public:
 
-	Spritesheet(const std::string fileName);
+  Spritesheet(const std::string fileName);
 
-	std::string getFilename();
-	SpriteParameters* getSpriteParameters(std::string spriteName);
-	
+  std::string getFilename();
+  SpriteParameters* getSpriteParameters(std::string spriteName);
+
 
 private:
 
-	std::string m_fileName;
-	std::map<std::string, SpriteParameters*> m_sprites;
+  void loadPositions();
+
+  std::string m_fileName;
+  std::map<std::string, SpriteParameters*> m_sprites;
 
 };
 
