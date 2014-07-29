@@ -21,6 +21,16 @@ void PlayingState::initializePlayer() {
   m_gameObjects.push_back(m_player);
 }
 
+void PlayingState::initializeEnemy() {
+  SpriteParameters *spriteParameters = m_spritesheet->getSpriteParameters("enemy");
+  LoaderParams* loaderParams = new LoaderParams(spriteParameters->getHorizontalOffset(),
+                                                spriteParameters->getVerticalOffset(),
+                                                50, 50,
+                                                spriteParameters->getWidth(),
+                                                spriteParameters->getHeight());
+   m_gameObjects.push_back(new GameObject(loaderParams));
+}
+
 void PlayingState::draw() {
   m_bulletManager->draw();
   GameState::draw();

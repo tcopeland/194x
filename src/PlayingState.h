@@ -12,6 +12,7 @@ public:
 
   void initializeBulletManager();
   void initializePlayer();
+  void initializeEnemy();
   void draw();
   void update();
 

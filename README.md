@@ -14,6 +14,11 @@ At the menu screen:
 - hit 'p' to play
 - hit 'q' to quit
 
+When playing:
+
+- arrow keys move
+- spacebar fires
+
 #### You are modifying 194x
 
 Make sure you using the clang on OS X, not some random GCC version which you installed in /usr/local.  Otherwise you might get errors about a lack of support for `-fpascal-strings` and the inability of GCC to find an Objective-C compiler.
@@ -26,8 +31,10 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
+* Enemy plane should cycle between 3 images
 * SpriteParameters should know how many images a sprite series is composed of, vs Player.cpp dividing ticks by 3
 * Implement state - paused
+* Pressing 's' (or 'm'?) during gameplay mutes sound
 * Make sound when player fires bullet
 * Enemy plane onscreen, not affected by bullets
 * Enemy plane moves
@@ -37,6 +44,7 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 * Score increments when enemy destroyed
 * Enemy plane shoots
 * Enemy bullet affects player sprite
+* Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
 * Destruction of enemy plane leaves power up
 
 #### Some helpful links:
