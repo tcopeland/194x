@@ -28,7 +28,7 @@ void PlayingState::initializeEnemy() {
                                                 50, 50,
                                                 spriteParameters->getWidth(),
                                                 spriteParameters->getHeight());
-   m_gameObjects.push_back(new GameObject(loaderParams));
+   m_gameObjects.push_back(new Enemy(loaderParams));
 }
 
 void PlayingState::draw() {

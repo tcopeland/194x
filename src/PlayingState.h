@@ -3,6 +3,7 @@
 
 #include "GameState.h"
 #include "BulletManager.h"
+#include "Enemy.h"
 
 class PlayingState : public GameState {
 
