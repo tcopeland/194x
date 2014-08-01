@@ -31,20 +31,17 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
-* SpriteParameters should know how many images a sprite series is composed of, vs Player.cpp dividing ticks by 3
-* Implement state - paused
-* Pressing 's' (or 'm'?) during gameplay mutes sound
-* Make sound when player fires bullet
-* Enemy plane onscreen, not affected by bullets
-* Enemy plane moves
 * Enemy plane disappears when hit by bullet
 * Enemy plane explodes when hit by bullet
+* Make sound when player fires bullet
+* Pressing 's' (or 'm'?) during gameplay mutes sound
 * Score appears at the top of the screen
 * Score increments when enemy destroyed
 * Enemy plane shoots
 * Enemy bullet affects player sprite
 * Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
 * Destruction of enemy plane leaves power up
+* Implement 'paused' state
 
 #### Some helpful links:
 

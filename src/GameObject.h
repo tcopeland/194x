@@ -22,6 +22,7 @@ protected:
   int m_height;
   int m_currentRow;
   int m_currentFrame;
+  int m_imagesToCycle;
   Vector2D m_velocity;
   Vector2D m_position;
   Vector2D m_acceleration;

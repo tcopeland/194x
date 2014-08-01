@@ -5,12 +5,13 @@ class SpriteParameters {
 
 public:
 
-  SpriteParameters(int horizontalOffset, int verticalOffset, int width, int height);
+  SpriteParameters(int horizontalOffset, int verticalOffset, int width, int height, int imagesToCycle);
 
   int getHorizontalOffset();
   int getVerticalOffset();
   int getWidth();
   int getHeight();
+  int getImagesToCycle();
 
 private:
 
@@ -18,6 +19,7 @@ private:
   int m_verticalOffset;
   int m_width;
   int m_height;
+  int m_imagesToCycle;
 
 };
 

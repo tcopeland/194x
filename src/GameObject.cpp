@@ -6,6 +6,7 @@ GameObject::GameObject(const LoaderParams* pParams) : m_position(pParams->getX()
   m_verticalOffset = pParams->getVerticalOffset();
   m_width = pParams->getWidth();
   m_height = pParams->getHeight();
+  m_imagesToCycle = pParams->getImagesToCycle();
   m_currentRow = 1;
   m_currentFrame = 1;
 }
@@ -16,6 +17,7 @@ void GameObject::draw() {
 
 void GameObject::update() {
   m_position += m_velocity;
+  m_currentFrame = ((SDL_GetTicks() / 100) % m_imagesToCycle);
 }
 
 void GameObject::clean() {}

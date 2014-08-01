@@ -26,7 +26,8 @@ void Spritesheet::loadPositions() {
     int voff = atoi(strtok_r(NULL, delim, &savePtr));
     int w = atoi(strtok_r(NULL, delim, &savePtr));
     int h = atoi(strtok_r(NULL, delim, &savePtr));
-    m_sprites[spriteName] = new SpriteParameters(hoff, voff, w, h);
+    int imagesToCycle = atoi(strtok_r(NULL, delim, &savePtr));
+    m_sprites[spriteName] = new SpriteParameters(hoff, voff, w, h, imagesToCycle);
   }
   file.close();
 }

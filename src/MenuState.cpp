@@ -6,12 +6,14 @@ MenuState::MenuState(Spritesheet* spritesheet) : GameState(spritesheet) {
                                                 playGameLabelSpriteParameters->getVerticalOffset(),
                                                 300, 200,
                                                 playGameLabelSpriteParameters->getWidth(),
-                                                playGameLabelSpriteParameters->getHeight())));
+                                                playGameLabelSpriteParameters->getHeight(),
+                                                playGameLabelSpriteParameters->getImagesToCycle())));
 
   SpriteParameters *quitLabelSpriteParameters = spritesheet->getSpriteParameters("quit_label");
   m_gameObjects.push_back(new QuitLabel(new LoaderParams(quitLabelSpriteParameters->getHorizontalOffset(),
                                                 quitLabelSpriteParameters->getVerticalOffset(),
                                                 300, 300,
                                                 quitLabelSpriteParameters->getWidth(),
-                                                quitLabelSpriteParameters->getHeight())));
+                                                quitLabelSpriteParameters->getHeight(),
+                                                quitLabelSpriteParameters->getImagesToCycle())));
 }

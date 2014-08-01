@@ -10,7 +10,8 @@ void BulletManager::addBullet(Vector2D* position) {
                                                 bulletSpriteParameters->getVerticalOffset(),
                                                 position->getX(), position->getY(),
                                                 bulletSpriteParameters->getWidth(),
-                                                bulletSpriteParameters->getHeight());
+                                                bulletSpriteParameters->getHeight(),
+                                                bulletSpriteParameters->getImagesToCycle());
   GameObject* bullet = new GameObject(loaderParams);
   bullet->setVelocity(*(new Vector2D(0, -3)));
   m_bullets.push_back(bullet);

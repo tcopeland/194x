@@ -3,5 +3,6 @@
 Enemy::Enemy(const LoaderParams* pParams) : GameObject(pParams) {}
 
 void Enemy::update() {
-  m_currentFrame = ((SDL_GetTicks() / 100) % 3);
+  m_velocity.setY(1);
+  GameObject::update();
 }

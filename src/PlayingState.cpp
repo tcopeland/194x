@@ -14,7 +14,8 @@ void PlayingState::initializePlayer() {
                                                 spriteParameters->getVerticalOffset(),
                                                 350, 450,
                                                 spriteParameters->getWidth(),
-                                                spriteParameters->getHeight());
+                                                spriteParameters->getHeight(),
+                                                spriteParameters->getImagesToCycle());
 
   m_player = new Player(loaderParams);
   m_player->setBulletManager(m_bulletManager);
@@ -27,7 +28,8 @@ void PlayingState::initializeEnemy() {
                                                 spriteParameters->getVerticalOffset(),
                                                 50, 50,
                                                 spriteParameters->getWidth(),
-                                                spriteParameters->getHeight());
+                                                spriteParameters->getHeight(),
+                                                spriteParameters->getImagesToCycle());
    m_gameObjects.push_back(new Enemy(loaderParams));
 }
 

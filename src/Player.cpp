@@ -9,7 +9,6 @@ void Player::draw() {
 
 void Player::update() {
   handleInput();
-  m_currentFrame = (((SDL_GetTicks() / 100) % 3));
   GameObject::update();
   if (m_velocity.getX() > 0) {
     m_velocity.setX(m_velocity.getX()-1);
