@@ -31,3 +31,30 @@ void BulletManager::update() {
     (*i)->update();
   }
 }
+
+bool BulletManager::hit(GameObject* pGameObject) {
+  for (std::vector<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
+    if (collided(pGameObject, (*i))) {
+      return true;
+    }
+  }
+  return false;
+}
+
+bool BulletManager::collided(GameObject* pA, GameObject* pB) {
+  int leftA = pA->getPosition().getX();
+  int rightA = leftA + pA->getWidth();
+  int topA = pA->getPosition().getY();
+  int bottomA = topA + pA->getHeight();
+
+  int leftB = pB->getPosition().getX();
+  int rightB = leftB + pB->getWidth();
+  int topB = pB->getPosition().getY();
+  int bottomB = topB + pB->getHeight();
+
+  if ((rightA < leftB) || (leftA > rightB) || (bottomA < topB) || (topA > bottomB)) {
+    return false;
+  }
+
+  return true;
+}

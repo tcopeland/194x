@@ -21,6 +21,7 @@ private:
 
   BulletManager* m_bulletManager;
   Player* m_player;
+  GameObject* m_enemy;
   Spritesheet* m_spritesheet;
 
 };

@@ -13,6 +13,9 @@ public:
   virtual void update();
   virtual void clean();
   virtual void setVelocity(Vector2D velocity);
+  Vector2D getPosition();
+  int getWidth();
+  int getHeight();
 
 protected:
 

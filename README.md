@@ -31,7 +31,6 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
-* Enemy plane disappears when hit by bullet
 * Enemy plane explodes when hit by bullet
 * Make sound when player fires bullet
 * Pressing 's' (or 'm'?) during gameplay mutes sound
@@ -42,6 +41,8 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 * Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
 * Destruction of enemy plane leaves power up
 * Implement 'paused' state
+* [cleanup] Bullets are removed from BulletManager when they go offscreen
+* [cleanup] Use std::set for game objects
 
 #### Some helpful links:
 

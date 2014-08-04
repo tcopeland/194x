@@ -26,11 +26,12 @@ void PlayingState::initializeEnemy() {
   SpriteParameters *spriteParameters = m_spritesheet->getSpriteParameters("enemy");
   LoaderParams* loaderParams = new LoaderParams(spriteParameters->getHorizontalOffset(),
                                                 spriteParameters->getVerticalOffset(),
-                                                50, 50,
+                                                350, 50,
                                                 spriteParameters->getWidth(),
                                                 spriteParameters->getHeight(),
                                                 spriteParameters->getImagesToCycle());
-   m_gameObjects.push_back(new Enemy(loaderParams));
+   m_enemy = new Enemy(loaderParams);
+   m_gameObjects.push_back(m_enemy);
 }
 
 void PlayingState::draw() {
@@ -40,5 +41,9 @@ void PlayingState::draw() {
 
 void PlayingState::update() {
   m_bulletManager->update();
+  if (m_bulletManager->hit(m_enemy)) {
+    // TODO if game objects are not ordered, a std::set has simpler removal functions
+    m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), m_enemy), m_gameObjects.end());
+  }
   GameState::update();
 }

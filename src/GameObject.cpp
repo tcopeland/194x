@@ -25,3 +25,15 @@ void GameObject::clean() {}
 void GameObject::setVelocity(Vector2D velocity) {
   m_velocity = velocity;
 }
+
+Vector2D GameObject::getPosition() {
+  return m_position;
+}
+
+int GameObject::getWidth() {
+  return m_width;
+}
+
+int GameObject::getHeight() {
+  return m_height;
+}

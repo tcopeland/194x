@@ -15,11 +15,13 @@ public:
   void removeBullet(GameObject* bullet);
   void draw();
   void update();
+  bool hit(GameObject* pGameObject);
 
 private:
 
   std::vector<GameObject*> m_bullets;
   Spritesheet* m_spritesheet;
+  bool collided(GameObject* pA, GameObject* pB);
 
 };
 
