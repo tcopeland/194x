@@ -31,7 +31,7 @@ cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen
 
 #### TODO 
 
-* Enemy plane explodes when hit by bullet
+* Explosion disappears after it's done
 * Make sound when player fires bullet
 * Pressing 's' (or 'm'?) during gameplay mutes sound
 * Score appears at the top of the screen

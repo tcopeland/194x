@@ -42,6 +42,8 @@ void PlayingState::draw() {
 void PlayingState::update() {
   m_bulletManager->update();
   if (m_bulletManager->hit(m_enemy)) {
+    // TODO needs to be midpoint of enemy sprite
+    m_gameObjects.push_back(ExplosionAnimation::createAtPosition(m_spritesheet, m_enemy->getPosition()));
     // TODO if game objects are not ordered, a std::set has simpler removal functions
     m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), m_enemy), m_gameObjects.end());
   }

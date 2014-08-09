@@ -4,6 +4,7 @@
 #include "GameState.h"
 #include "BulletManager.h"
 #include "Enemy.h"
+#include "ExplosionAnimation.h"
 
 class PlayingState : public GameState {
 
