@@ -24,6 +24,7 @@ private:
   Player* m_player;
   GameObject* m_enemy;
   Spritesheet* m_spritesheet;
+  std::vector<ExplosionAnimation*> m_explosionAnimations;
 
 };
 

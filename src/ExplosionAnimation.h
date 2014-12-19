@@ -22,6 +22,14 @@ class ExplosionAnimation : public GameObject {
     sp->getImagesToCycle());
     return new ExplosionAnimation(params);
   }
+
+  void update();
+
+  bool done();
+
+protected:
+
+  int m_counter;
 };
 
 #endif
