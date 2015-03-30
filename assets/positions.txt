@@ -3,4 +3,4 @@ play_game_label,480,385,100,20,1
 quit_label,480,460,80,20,1
 bullet,85,215,10,10,1
 enemy,4,466,33,32,3
-explosion,4,301,66,65,4
+explosion,4,301,66,65,7
