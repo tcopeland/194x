@@ -32,6 +32,8 @@ void BulletManager::update() {
   }
 }
 
+// FIXME return a Collision so that the bullet can be erased later
+// and so that collision and bullet removal aren't conflated
 bool BulletManager::hitAndEraseBullet(GameObject* pGameObject) {
   for (std::vector<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
     if (collided(pGameObject, (*i))) {
