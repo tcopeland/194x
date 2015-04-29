@@ -15,7 +15,7 @@ public:
   void removeBullet(GameObject* bullet);
   void draw();
   void update();
-  bool hit(GameObject* pGameObject);
+  bool hitAndEraseBullet(GameObject* pGameObject);
 
 private:
 

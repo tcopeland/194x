@@ -42,7 +42,7 @@ void PlayingState::draw() {
 void PlayingState::update() {
   m_bulletManager->update();
   // Did bullet hit enemy?
-  if (m_bulletManager->hit(m_enemy)) {
+  if (m_bulletManager->hitAndEraseBullet(m_enemy)) {
     if (std::find(m_gameObjects.begin(), m_gameObjects.end(), m_enemy) != m_gameObjects.end()) {
       // TODO needs to be midpoint of enemy sprite
       ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, m_enemy->getPosition());
@@ -50,7 +50,6 @@ void PlayingState::update() {
       m_gameObjects.push_back(explosionAnimation);
       // TODO if game objects are not ordered, a std::set has simpler removal functions
       m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), m_enemy), m_gameObjects.end());
-      // TODO tell bullet mgr to erase bullet
     }
   }
   // TODO possible to use RTTI to identify explosions in game objects list?

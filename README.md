@@ -29,14 +29,13 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 
 #### TODO 
 
-* Bullet disappears when it hits something
-* Pressing 's' (or 'm'?) during gameplay mutes sound
 * Score appears at the top of the screen
 * Score increments when enemy destroyed
 * Enemy plane shoots
 * Explosion goes more slowly
 * Enemy bullet affects player sprite
 * Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
+* Pressing 's' (or 'm'?) during gameplay mutes sound
 * Destruction of enemy plane leaves power up
 * Implement 'paused' state
 * [cleanup] Bullets are removed from BulletManager when they go offscreen

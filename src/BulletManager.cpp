@@ -32,9 +32,10 @@ void BulletManager::update() {
   }
 }
 
-bool BulletManager::hit(GameObject* pGameObject) {
+bool BulletManager::hitAndEraseBullet(GameObject* pGameObject) {
   for (std::vector<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
     if (collided(pGameObject, (*i))) {
+      m_bullets.erase(std::remove(m_bullets.begin(), m_bullets.end(), *i), m_bullets.end());
       return true;
     }
   }
