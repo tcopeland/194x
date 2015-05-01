@@ -29,6 +29,7 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 
 #### TODO 
 
+* Enemy planes keep coming
 * Score appears at the top of the screen
 * Score increments when enemy destroyed
 * Enemy plane shoots
