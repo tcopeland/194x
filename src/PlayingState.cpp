@@ -2,6 +2,7 @@
 
 PlayingState::PlayingState(Spritesheet* spritesheet) : GameState(spritesheet) {
   m_spritesheet = spritesheet;
+  m_enemy = NULL;
 }
 
 void PlayingState::initializeBulletManager() {
@@ -24,9 +25,10 @@ void PlayingState::initializePlayer() {
 
 void PlayingState::initializeEnemy() {
   SpriteParameters *spriteParameters = m_spritesheet->getSpriteParameters("enemy");
+  int randX = 200 + (rand() % 600 );
   LoaderParams* loaderParams = new LoaderParams(spriteParameters->getHorizontalOffset(),
                                                 spriteParameters->getVerticalOffset(),
-                                                350, 50,
+                                                randX, 50,
                                                 spriteParameters->getWidth(),
                                                 spriteParameters->getHeight(),
                                                 spriteParameters->getImagesToCycle());
@@ -40,6 +42,9 @@ void PlayingState::draw() {
 }
 
 void PlayingState::update() {
+  if (m_enemy == NULL) {
+    initializeEnemy();
+  }
   m_bulletManager->update();
   // Did bullet hit enemy?
   Collision* c = m_bulletManager->checkHit(m_enemy);
@@ -51,6 +56,7 @@ void PlayingState::update() {
       m_gameObjects.push_back(explosionAnimation);
       // TODO if game objects are not ordered, a std::set has simpler removal functions
       m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), m_enemy), m_gameObjects.end());
+      m_enemy = NULL;
       m_bulletManager->removeBullet(c->getBullet());
     }
   }

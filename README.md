@@ -25,15 +25,15 @@ Make sure you using the clang on OS X, not some random GCC version which you ins
 
 Docs on my machine are at file:///Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet/html/index.html.  I generated them with `cd /Users/tomcopeland/src/SDL2-2.0.1/Xcode/XcodeDocSet && doxygen`.
 
-Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/bits/html/index.html; I generated them with `cd /usr/local/gcc-4.9/include/c++/4.9.0/bits/ && doxygen -g && doxygen`.  Maybe check /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/c++/4.2.1/bits/.
+Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/bits/html/index.html; I generated them with `cd /usr/local/gcc-4.9/include/c++/4.9.0/bits/ && doxygen -g && doxygen`.
 
 #### TODO 
 
-* Enemy planes keep coming
 * Score appears at the top of the screen
 * Score increments when enemy destroyed
 * Enemy plane shoots
 * Explosion goes more slowly
+* Fire 1 bullet per spacebar press
 * Enemy bullet affects player sprite
 * Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
 * Pressing 's' (or 'm'?) during gameplay mutes sound

@@ -43,6 +43,5 @@ void Game::changeToPlayingState() {
   PlayingState* playingState = new PlayingState(m_spritesheet);
   playingState->initializeBulletManager();
   playingState->initializePlayer();
-  playingState->initializeEnemy();
   m_gameState = (GameState*)playingState;
 }
