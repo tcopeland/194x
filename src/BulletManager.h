@@ -4,6 +4,7 @@
 #include "Vector2D.h"
 #include "GameObject.h"
 #include "Spritesheet.h"
+#include "Collision.h"
 #include <vector>
 
 class BulletManager {
@@ -15,7 +16,7 @@ public:
   void removeBullet(GameObject* bullet);
   void draw();
   void update();
-  bool hitAndEraseBullet(GameObject* pGameObject);
+  Collision* checkHit(GameObject* pGameObject);
 
 private:
 
