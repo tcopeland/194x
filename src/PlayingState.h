@@ -14,7 +14,7 @@ public:
 
   void initializeBulletManager();
   void initializePlayer();
-  void initializeEnemy();
+  void initializeNewEnemy();
   void draw();
   void update();
 
@@ -22,8 +22,8 @@ private:
 
   BulletManager* m_bulletManager;
   Player* m_player;
-  GameObject* m_enemy;
   Spritesheet* m_spritesheet;
+  std::vector<GameObject*> m_enemies;
   std::vector<ExplosionAnimation*> m_explosionAnimations;
 
 };

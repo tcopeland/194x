@@ -2,7 +2,6 @@
 
 PlayingState::PlayingState(Spritesheet* spritesheet) : GameState(spritesheet) {
   m_spritesheet = spritesheet;
-  m_enemy = NULL;
 }
 
 void PlayingState::initializeBulletManager() {
@@ -23,7 +22,7 @@ void PlayingState::initializePlayer() {
   m_gameObjects.push_back(m_player);
 }
 
-void PlayingState::initializeEnemy() {
+void PlayingState::initializeNewEnemy() {
   SpriteParameters *spriteParameters = m_spritesheet->getSpriteParameters("enemy");
   int randX = 200 + (rand() % 600 );
   LoaderParams* loaderParams = new LoaderParams(spriteParameters->getHorizontalOffset(),
@@ -32,8 +31,9 @@ void PlayingState::initializeEnemy() {
                                                 spriteParameters->getWidth(),
                                                 spriteParameters->getHeight(),
                                                 spriteParameters->getImagesToCycle());
-   m_enemy = new Enemy(loaderParams);
-   m_gameObjects.push_back(m_enemy);
+   GameObject* enemy = new Enemy(loaderParams);
+   m_gameObjects.push_back(enemy);
+   m_enemies.push_back(enemy);
 }
 
 void PlayingState::draw() {
@@ -42,22 +42,27 @@ void PlayingState::draw() {
 }
 
 void PlayingState::update() {
-  if (m_enemy == NULL) {
-    initializeEnemy();
+  if ((rand() % 1000) > 900) {
+    initializeNewEnemy();
   }
   m_bulletManager->update();
   // Did bullet hit enemy?
-  Collision* c = m_bulletManager->checkHit(m_enemy);
-  if (c->hitOccurred()) {
-    if (std::find(m_gameObjects.begin(), m_gameObjects.end(), m_enemy) != m_gameObjects.end()) {
-      // TODO needs to be midpoint of enemy sprite
-      ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, m_enemy->getPosition());
-      m_explosionAnimations.push_back(explosionAnimation);
-      m_gameObjects.push_back(explosionAnimation);
-      // TODO if game objects are not ordered, a std::set has simpler removal functions
-      m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), m_enemy), m_gameObjects.end());
-      m_enemy = NULL;
-      m_bulletManager->removeBullet(c->getBullet());
+  for (std::vector<GameObject*>::iterator i = m_enemies.begin(); i != m_enemies.end(); i++) {
+    GameObject* enemy = *i;
+    Collision* c = m_bulletManager->checkHit(enemy);
+    if (c->hitOccurred()) {
+      if (std::find(m_gameObjects.begin(), m_gameObjects.end(), enemy) != m_gameObjects.end()) {
+        // TODO needs to be midpoint of enemy sprite
+        ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, enemy->getPosition());
+        m_explosionAnimations.push_back(explosionAnimation);
+        m_gameObjects.push_back(explosionAnimation);
+        // TODO if game objects are not ordered, a std::set has simpler removal functions
+        // TODO what are the semantics of erase?  does it null out the object?  because it seems like the line below
+        // causes segfaults because it's attempting to delete the object twice.
+        //m_enemies.erase(std::remove(m_enemies.begin(), m_enemies.end(), enemy), m_enemies.end());
+        m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), enemy), m_gameObjects.end());
+        m_bulletManager->removeBullet(c->getBullet());
+      }
     }
   }
   // TODO possible to use RTTI to identify explosions in game objects list?
