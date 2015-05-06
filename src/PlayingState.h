@@ -20,11 +20,15 @@ public:
 
 private:
 
+  void drawScore();
+  void loadAndDraw(std::string str, int x);
+
   BulletManager* m_bulletManager;
   Player* m_player;
   Spritesheet* m_spritesheet;
   std::vector<GameObject*> m_enemies;
   std::vector<ExplosionAnimation*> m_explosionAnimations;
+  int m_score;
 
 };
 
