@@ -31,12 +31,14 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 
 * Score appears at the top of the screen
 * Score increments when enemy destroyed
+* Player explodes on collision with enemy
 * Enemy plane shoots
 * Explosion goes more slowly
 * Fire 1 bullet per spacebar press
 * Enemy bullet affects player sprite
 * Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
 * Destruction of enemy plane leaves power up
+* Player has limited number of lives
 * Implement 'paused' state
 * Pressing 's' (or 'm'?) during gameplay mutes sound
 * [cleanup] Bullets are removed from BulletManager when they go offscreen
