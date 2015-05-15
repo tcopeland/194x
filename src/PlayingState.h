@@ -21,7 +21,7 @@ public:
 private:
 
   void drawScore();
-  void loadAndDraw(std::string str, int x);
+  void loadAndDraw(SpriteParameters* sp, int x);
 
   BulletManager* m_bulletManager;
   Player* m_player;
@@ -29,6 +29,7 @@ private:
   std::vector<GameObject*> m_enemies;
   std::vector<ExplosionAnimation*> m_explosionAnimations;
   int m_score;
+  std::map<std::string, SpriteParameters*> m_scoreSpriteParameters;
 
 };
 

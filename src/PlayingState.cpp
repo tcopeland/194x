@@ -3,6 +3,16 @@
 PlayingState::PlayingState(Spritesheet* spritesheet) : GameState(spritesheet) {
   m_spritesheet = spritesheet;
   m_score = 0;
+  m_scoreSpriteParameters[std::to_string('0')] = m_spritesheet->getSpriteParameters("zero");
+  m_scoreSpriteParameters[std::to_string('1')] = m_spritesheet->getSpriteParameters("one");
+  m_scoreSpriteParameters[std::to_string('2')] = m_spritesheet->getSpriteParameters("two");
+  m_scoreSpriteParameters[std::to_string('3')] = m_spritesheet->getSpriteParameters("three");
+  m_scoreSpriteParameters[std::to_string('4')] = m_spritesheet->getSpriteParameters("four");
+  m_scoreSpriteParameters[std::to_string('5')] = m_spritesheet->getSpriteParameters("five");
+  m_scoreSpriteParameters[std::to_string('6')] = m_spritesheet->getSpriteParameters("six");
+  m_scoreSpriteParameters[std::to_string('7')] = m_spritesheet->getSpriteParameters("seven");
+  m_scoreSpriteParameters[std::to_string('8')] = m_spritesheet->getSpriteParameters("eight");
+  m_scoreSpriteParameters[std::to_string('9')] = m_spritesheet->getSpriteParameters("nine");
 }
 
 void PlayingState::initializeBulletManager() {
@@ -47,35 +57,14 @@ void PlayingState::drawScore() {
   std::string s = std::to_string(m_score);
   std::reverse(s.begin(), s.end());
   int current_x = 65;
+  // TODO how to avoid these std::string to char conversions?
   for (char& c : s) {
-    // TODO use a map
-    if (c == '0') {
-      loadAndDraw("zero", current_x);
-    } else if (c == '1') {
-      loadAndDraw("one", current_x);
-    } else if (c == '2') {
-      loadAndDraw("two", current_x);
-    } else if (c == '3') {
-      loadAndDraw("three", current_x);
-    } else if (c == '4') {
-      loadAndDraw("four", current_x);
-    } else if (c == '5') {
-      loadAndDraw("five", current_x);
-    } else if (c == '6') {
-      loadAndDraw("six", current_x);
-    } else if (c == '7') {
-      loadAndDraw("seven", current_x);
-    } else if (c == '8') {
-      loadAndDraw("eight", current_x);
-    } else if (c == '9') {
-      loadAndDraw("nine", current_x);
-    }
+    loadAndDraw(m_scoreSpriteParameters[std::to_string(c)], current_x);
     current_x -= 15;
   }
 }
 
-void PlayingState::loadAndDraw(std::string str, int x) {
-  SpriteParameters* sp = m_spritesheet->getSpriteParameters(str);
+void PlayingState::loadAndDraw(SpriteParameters* sp, int x) {
   (new GameObject(new LoaderParams(sp->getHorizontalOffset(), sp->getVerticalOffset(), x, 5, sp->getWidth(), sp->getHeight(), sp->getImagesToCycle())))->draw();
 }
 
