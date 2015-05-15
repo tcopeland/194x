@@ -29,7 +29,6 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 
 #### TODO 
 
-* Keep player from going off screen
 * Player explodes on collision with enemy
 * Enemy plane shoots
 * Explosion goes more slowly

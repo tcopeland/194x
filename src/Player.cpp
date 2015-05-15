@@ -10,6 +10,18 @@ void Player::draw() {
 void Player::update() {
   handleInput();
   GameObject::update();
+  if (m_position.getX() < 0) {
+    m_position.setX(0);
+  } else if (m_position.getX() > 738) {
+    // 738 = 800 - sprite width
+    m_position.setX(738);
+  }
+  if (m_position.getY() < 0) {
+    m_position.setY(0);
+  } else if (m_position.getY() > 545) {
+    // 545 = 600 - sprite height
+    m_position.setY(545);
+  }
   if (m_velocity.getX() > 0) {
     m_velocity.setX(m_velocity.getX()-1);
   }
