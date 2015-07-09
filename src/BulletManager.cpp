@@ -24,7 +24,7 @@ void BulletManager::draw() {
 }
 
 void BulletManager::update() {
-  // TODO is there an interator that supports removal?  if not, can we just put these in a set vs a vector?
+  // TODO is there an iterator that supports removal?  if not, can we just put these in a set vs a vector?
   std::vector<GameObject*> to_remove;
   for (std::vector<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
     (*i)->update();
