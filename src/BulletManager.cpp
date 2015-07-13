@@ -2,6 +2,7 @@
 
 BulletManager::BulletManager(Spritesheet* spritesheet) {
   m_spritesheet = spritesheet;
+  m_bullets.reserve(50);
 }
 
 void BulletManager::addBullet(Vector2D* position) {

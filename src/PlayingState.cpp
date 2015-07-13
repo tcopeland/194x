@@ -3,6 +3,8 @@
 PlayingState::PlayingState(Spritesheet* spritesheet) : GameState(spritesheet) {
   m_spritesheet = spritesheet;
   m_score = 0;
+  m_explosionAnimations.reserve(10);
+  m_gameObjects.reserve(50);
   m_scoreSpriteParameters[std::to_string('0')] = m_spritesheet->getSpriteParameters("zero");
   m_scoreSpriteParameters[std::to_string('1')] = m_spritesheet->getSpriteParameters("one");
   m_scoreSpriteParameters[std::to_string('2')] = m_spritesheet->getSpriteParameters("two");
@@ -93,13 +95,19 @@ void PlayingState::update() {
       }
     }
   }
+
   // TODO possible to use RTTI to identify explosions in game objects list?
+  std::vector<ExplosionAnimation*> to_remove;
   for (std::vector<ExplosionAnimation*>::iterator it = m_explosionAnimations.begin(); it != m_explosionAnimations.end(); ++it) {
     ExplosionAnimation* e = *it;
     if (e->done()) {
-      std::remove(m_explosionAnimations.begin(), m_explosionAnimations.end(), e), m_explosionAnimations.end();
-      m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), e), m_gameObjects.end());
+      to_remove.push_back(e);
     }
   }
+  for (std::vector<ExplosionAnimation*>::const_iterator it = to_remove.begin(); it != to_remove.end(); ++it) {
+    m_explosionAnimations.erase(std::remove(m_explosionAnimations.begin(), m_explosionAnimations.end(), *it), m_explosionAnimations.end());
+    m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), *it), m_gameObjects.end());
+  }
+
   GameState::update();
 }
