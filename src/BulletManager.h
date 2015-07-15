@@ -17,12 +17,12 @@ public:
   void draw();
   void update();
   Collision* checkHit(GameObject* pGameObject);
+  bool collided(GameObject* pA, GameObject* pB);
 
 private:
 
   std::vector<GameObject*> m_bullets;
   Spritesheet* m_spritesheet;
-  bool collided(GameObject* pA, GameObject* pB);
 
 };
 

@@ -75,9 +75,17 @@ void PlayingState::update() {
     initializeNewEnemy();
   }
   m_bulletManager->update();
-  // Did bullet hit enemy?
   for (std::vector<GameObject*>::iterator i = m_enemies.begin(); i != m_enemies.end(); i++) {
     GameObject* enemy = *i;
+
+  // Did player hit enemy?
+    if (m_bulletManager->collided(m_player, enemy)) {
+      ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, m_player->getPosition());
+      m_explosionAnimations.push_back(explosionAnimation);
+      m_gameObjects.push_back(explosionAnimation);
+    }
+
+  // Did bullet hit enemy?
     Collision* c = m_bulletManager->checkHit(enemy);
     if (c->hitOccurred()) {
       if (std::find(m_gameObjects.begin(), m_gameObjects.end(), enemy) != m_gameObjects.end()) {
