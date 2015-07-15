@@ -40,6 +40,7 @@ void BulletManager::update() {
 }
 
 void BulletManager::removeBullet(GameObject* bullet) {
+  //std::cout << "There are " << m_bullets.size() << " bullets in a vector of capacity " << m_bullets.capacity() << std::endl;
   m_bullets.erase(std::remove(m_bullets.begin(), m_bullets.end(), bullet), m_bullets.end());
 }
 

@@ -12,6 +12,7 @@ void GameState::update() {
     }
   }
   for (std::vector<GameObject*>::iterator i = to_remove.begin(); i != to_remove.end(); i++) {
+    //std::cout << "There are " << m_gameObjects.size() << " m_gameObjects in a vector of capacity " << m_gameObjects.capacity() << std::endl;
     m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), *i));
   }
 }

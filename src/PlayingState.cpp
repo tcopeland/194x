@@ -105,6 +105,7 @@ void PlayingState::update() {
     }
   }
   for (std::vector<ExplosionAnimation*>::const_iterator it = to_remove.begin(); it != to_remove.end(); ++it) {
+    //std::cout << "There are " << m_explosionAnimations.size() << " m_explosionAnimations in a vector of capacity " << m_explosionAnimations.capacity() << std::endl;
     m_explosionAnimations.erase(std::remove(m_explosionAnimations.begin(), m_explosionAnimations.end(), *it), m_explosionAnimations.end());
     m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), *it), m_gameObjects.end());
   }
