@@ -36,6 +36,7 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 * Enemy bullet affects player sprite
 * Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
 * Destruction of enemy plane leaves power up
+* * power up types: multiple bullets, faster moves, a bomb, faster rate of fire
 * Player has limited number of lives
 * Implement 'paused' state
 * Pressing 's' (or 'm'?) during gameplay mutes sound

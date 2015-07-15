@@ -44,9 +44,14 @@ void Player::clean() {}
 
 void Player::handleInput() {
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
-    Vector2D* halfPlayer = new Vector2D(22, 0);
-    Vector2D newBulletPosition = m_position + *halfPlayer;
-    m_bulletManager->addBullet(&newBulletPosition);
+    // TODO generate bullets based on a strategy
+    // TODO bullet could contain trajectory
+    Vector2D* halfPlayer1 = new Vector2D(30, 0);
+    Vector2D* halfPlayer2 = new Vector2D(14, 0);
+    Vector2D newBullet1Position = m_position + *halfPlayer1;
+    m_bulletManager->addBullet(&newBullet1Position);
+    Vector2D newBullet2Position = m_position + *halfPlayer2;
+    m_bulletManager->addBullet(&newBullet2Position);
     // SoundManager::Instance()->play_sound("bang");
   }
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT)) {
