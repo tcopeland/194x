@@ -2,6 +2,7 @@
 #define __GAME_STATE__
 
 #include <vector>
+#include <set>
 #include "SpriteParameters.h"
 #include "LoaderParams.h"
 #include "Player.h"

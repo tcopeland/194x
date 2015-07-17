@@ -27,7 +27,6 @@ private:
 	
 	~InputHandler();
 	static InputHandler* s_pInstance;
-	std::vector<bool> m_mouseButtonStates;
 	Uint8* m_keystates;
 	
 	void onKeyUp();

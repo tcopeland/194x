@@ -5,7 +5,7 @@
 #include "GameObject.h"
 #include "Spritesheet.h"
 #include "Collision.h"
-#include <vector>
+#include <set>
 
 class BulletManager {
 
@@ -21,7 +21,9 @@ public:
 
 private:
 
-  std::vector<GameObject*> m_bullets;
+  // TODO how to size a set when declaring it?  Or should happen
+  // in the constructor like with vector#reserve?
+  std::set<GameObject*> m_bullets;
   Spritesheet* m_spritesheet;
 
 };
