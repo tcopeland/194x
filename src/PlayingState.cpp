@@ -3,7 +3,6 @@
 PlayingState::PlayingState(Spritesheet* spritesheet) : GameState(spritesheet) {
   m_spritesheet = spritesheet;
   m_score = 0;
-  m_explosionAnimations.reserve(10);
   m_gameObjects.reserve(50);
   m_scoreSpriteParameters[std::to_string('0')] = m_spritesheet->getSpriteParameters("zero");
   m_scoreSpriteParameters[std::to_string('1')] = m_spritesheet->getSpriteParameters("one");
@@ -81,7 +80,7 @@ void PlayingState::update() {
   // Did player hit enemy?
     if (m_bulletManager->collided(m_player, enemy)) {
       ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, m_player->getPosition());
-      m_explosionAnimations.push_back(explosionAnimation);
+      m_explosionAnimations.insert(explosionAnimation);
       m_gameObjects.push_back(explosionAnimation);
       m_bulletManager->clear();
     }
@@ -92,7 +91,7 @@ void PlayingState::update() {
       if (std::find(m_gameObjects.begin(), m_gameObjects.end(), enemy) != m_gameObjects.end()) {
         // TODO needs to be midpoint of enemy sprite
         ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, enemy->getPosition());
-        m_explosionAnimations.push_back(explosionAnimation);
+        m_explosionAnimations.insert(explosionAnimation);
         m_gameObjects.push_back(explosionAnimation);
         // TODO if game objects are not ordered, a std::set has simpler removal functions
         // TODO what are the semantics of erase?  does it null out the object?  because it seems like the line below
@@ -107,7 +106,7 @@ void PlayingState::update() {
 
   // TODO possible to use RTTI to identify explosions in game objects list?
   std::set<ExplosionAnimation*> to_remove;
-  for (std::vector<ExplosionAnimation*>::const_iterator it = m_explosionAnimations.begin(); it != m_explosionAnimations.end(); ++it) {
+  for (std::set<ExplosionAnimation*>::const_iterator it = m_explosionAnimations.begin(); it != m_explosionAnimations.end(); ++it) {
     ExplosionAnimation* e = *it;
     if (e->done()) {
       to_remove.insert(e);
@@ -116,7 +115,7 @@ void PlayingState::update() {
   while (!to_remove.empty()) {
     //std::cout << "There are " << m_explosionAnimations.size() << " m_explosionAnimations in a vector of capacity " << m_explosionAnimations.capacity() << std::endl;
     ExplosionAnimation* obj = *to_remove.begin();
-    m_explosionAnimations.erase(std::remove(m_explosionAnimations.begin(), m_explosionAnimations.end(), obj), m_explosionAnimations.end());
+    m_explosionAnimations.erase(obj);
     to_remove.erase(obj);
     m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), obj), m_gameObjects.end());
   }

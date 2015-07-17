@@ -1,6 +1,7 @@
 #ifndef __PLAYING_STATE__
 #define __PLAYING_STATE__
 
+#include <set>
 #include "GameState.h"
 #include "BulletManager.h"
 #include "Enemy.h"
@@ -27,7 +28,7 @@ private:
   Player* m_player;
   Spritesheet* m_spritesheet;
   std::vector<GameObject*> m_enemies;
-  std::vector<ExplosionAnimation*> m_explosionAnimations;
+  std::set<ExplosionAnimation*> m_explosionAnimations;
   int m_score;
   std::map<std::string, SpriteParameters*> m_scoreSpriteParameters;
 
