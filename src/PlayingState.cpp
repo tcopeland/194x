@@ -105,17 +105,19 @@ void PlayingState::update() {
   }
 
   // TODO possible to use RTTI to identify explosions in game objects list?
-  std::vector<ExplosionAnimation*> to_remove;
+  std::set<ExplosionAnimation*> to_remove;
   for (std::vector<ExplosionAnimation*>::const_iterator it = m_explosionAnimations.begin(); it != m_explosionAnimations.end(); ++it) {
     ExplosionAnimation* e = *it;
     if (e->done()) {
-      to_remove.push_back(e);
+      to_remove.insert(e);
     }
   }
-  for (std::vector<ExplosionAnimation*>::const_iterator it = to_remove.begin(); it != to_remove.end(); ++it) {
+  while (!to_remove.empty()) {
     //std::cout << "There are " << m_explosionAnimations.size() << " m_explosionAnimations in a vector of capacity " << m_explosionAnimations.capacity() << std::endl;
-    m_explosionAnimations.erase(std::remove(m_explosionAnimations.begin(), m_explosionAnimations.end(), *it), m_explosionAnimations.end());
-    m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), *it), m_gameObjects.end());
+    ExplosionAnimation* obj = *to_remove.begin();
+    m_explosionAnimations.erase(std::remove(m_explosionAnimations.begin(), m_explosionAnimations.end(), obj), m_explosionAnimations.end());
+    to_remove.erase(obj);
+    m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), obj), m_gameObjects.end());
   }
 
   GameState::update();
