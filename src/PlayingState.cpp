@@ -83,6 +83,7 @@ void PlayingState::update() {
       ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, m_player->getPosition());
       m_explosionAnimations.push_back(explosionAnimation);
       m_gameObjects.push_back(explosionAnimation);
+      m_bulletManager->clear();
     }
 
   // Did bullet hit enemy?

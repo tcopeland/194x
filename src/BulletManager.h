@@ -18,6 +18,7 @@ public:
   void update();
   Collision* checkHit(GameObject* pGameObject);
   bool collided(GameObject* pA, GameObject* pB);
+  void clear();
 
 private:
 

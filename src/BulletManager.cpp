@@ -45,6 +45,10 @@ void BulletManager::removeBullet(GameObject* bullet) {
   m_bullets.erase(bullet);
 }
 
+void BulletManager::clear() {
+  m_bullets.clear();
+}
+
 Collision* BulletManager::checkHit(GameObject* pGameObject) {
   Collision* c = new Collision();
   for (std::set<GameObject*>::const_iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
