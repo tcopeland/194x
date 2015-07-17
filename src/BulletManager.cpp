@@ -18,7 +18,7 @@ void BulletManager::addBullet(Vector2D* position) {
 }
 
 void BulletManager::draw() {
-  for (std::set<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
+  for (std::set<GameObject*>::const_iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
     (*i)->draw();
   }
 }
@@ -26,7 +26,7 @@ void BulletManager::draw() {
 void BulletManager::update() {
   // TODO is there an iterator that supports removal?
   std::set<GameObject*> to_remove;
-  for (std::set<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
+  for (std::set<GameObject*>::const_iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
     (*i)->update();
     GameObject* bullet = *i;
     if (bullet->getPosition().getY() < 0) {
@@ -47,7 +47,7 @@ void BulletManager::removeBullet(GameObject* bullet) {
 
 Collision* BulletManager::checkHit(GameObject* pGameObject) {
   Collision* c = new Collision();
-  for (std::set<GameObject*>::iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
+  for (std::set<GameObject*>::const_iterator i = m_bullets.begin(); i != m_bullets.end(); i++) {
     if (collided(pGameObject, (*i))) {
       c->setBullet(*i);
       c->setHitOccurred();

@@ -106,7 +106,7 @@ void PlayingState::update() {
 
   // TODO possible to use RTTI to identify explosions in game objects list?
   std::vector<ExplosionAnimation*> to_remove;
-  for (std::vector<ExplosionAnimation*>::iterator it = m_explosionAnimations.begin(); it != m_explosionAnimations.end(); ++it) {
+  for (std::vector<ExplosionAnimation*>::const_iterator it = m_explosionAnimations.begin(); it != m_explosionAnimations.end(); ++it) {
     ExplosionAnimation* e = *it;
     if (e->done()) {
       to_remove.push_back(e);

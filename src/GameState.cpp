@@ -4,7 +4,7 @@ GameState::GameState(Spritesheet* spritesheet) {}
 
 void GameState::update() {
   std::set<GameObject*> to_remove;
-  for (std::vector<GameObject*>::iterator i = m_gameObjects.begin(); i != m_gameObjects.end(); i++) {
+  for (std::vector<GameObject*>::const_iterator i = m_gameObjects.begin(); i != m_gameObjects.end(); i++) {
     GameObject* obj = *i;
     obj->update();
     if (obj->getPosition().getY() > 600) {
@@ -20,7 +20,7 @@ void GameState::update() {
 }
 
 void GameState::draw() {
-  for (std::vector<GameObject*>::iterator i = m_gameObjects.begin(); i != m_gameObjects.end(); i++) {
+  for (std::vector<GameObject*>::const_iterator i = m_gameObjects.begin(); i != m_gameObjects.end(); i++) {
     (*i)->draw();
   }
 }
