@@ -29,10 +29,10 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 
 #### TODO 
 
-* Player strike triggers longer explosion
 * Player strike puts game into 'between lives' state
 * * explosion is bigger
 * Enemy plane shoots
+* Enemy planes move left/right
 * Explosion goes more slowly
 * Fire 1 bullet per spacebar press
 * Enemy bullet affects player sprite
