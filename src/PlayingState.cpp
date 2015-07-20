@@ -3,7 +3,6 @@
 PlayingState::PlayingState(Spritesheet* spritesheet) : GameState(spritesheet) {
   m_spritesheet = spritesheet;
   m_score = 0;
-  m_gameObjects.reserve(50);
   m_scoreSpriteParameters[std::to_string('0')] = m_spritesheet->getSpriteParameters("zero");
   m_scoreSpriteParameters[std::to_string('1')] = m_spritesheet->getSpriteParameters("one");
   m_scoreSpriteParameters[std::to_string('2')] = m_spritesheet->getSpriteParameters("two");
@@ -31,7 +30,7 @@ void PlayingState::initializePlayer() {
 
   m_player = new Player(loaderParams);
   m_player->setBulletManager(m_bulletManager);
-  m_gameObjects.push_back(m_player);
+  m_gameObjects.insert(m_player);
 }
 
 void PlayingState::initializeNewEnemy() {
@@ -44,7 +43,7 @@ void PlayingState::initializeNewEnemy() {
                                                 spriteParameters->getHeight(),
                                                 spriteParameters->getImagesToCycle());
    GameObject* enemy = new Enemy(loaderParams);
-   m_gameObjects.push_back(enemy);
+   m_gameObjects.insert(enemy);
    m_enemies.insert(enemy);
 }
 
@@ -81,7 +80,7 @@ void PlayingState::update() {
     if (m_bulletManager->collided(m_player, enemy)) {
       ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, m_player->getPosition());
       m_explosionAnimations.insert(explosionAnimation);
-      m_gameObjects.push_back(explosionAnimation);
+      m_gameObjects.insert(explosionAnimation);
       m_bulletManager->clear();
     }
 
@@ -92,12 +91,12 @@ void PlayingState::update() {
         // TODO needs to be midpoint of enemy sprite
         ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, enemy->getPosition());
         m_explosionAnimations.insert(explosionAnimation);
-        m_gameObjects.push_back(explosionAnimation);
+        m_gameObjects.insert(explosionAnimation);
         // TODO if game objects are not ordered, a std::set has simpler removal functions
         // TODO what are the semantics of erase?  does it null out the object?  because it seems like the line below
         // causes segfaults because it's attempting to delete the object twice.
         //m_enemies.erase(std::remove(m_enemies.begin(), m_enemies.end(), enemy), m_enemies.end());
-        m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), enemy), m_gameObjects.end());
+        m_gameObjects.erase(enemy);
         m_score += 100;
         m_bulletManager->removeBullet(c->getBullet());
       }
@@ -117,7 +116,7 @@ void PlayingState::update() {
     ExplosionAnimation* obj = *to_remove.begin();
     m_explosionAnimations.erase(obj);
     to_remove.erase(obj);
-    m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), obj), m_gameObjects.end());
+    m_gameObjects.erase(obj);
   }
 
   GameState::update();
