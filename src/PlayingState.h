@@ -27,7 +27,7 @@ private:
   BulletManager* m_bulletManager;
   Player* m_player;
   Spritesheet* m_spritesheet;
-  std::vector<GameObject*> m_enemies;
+  std::set<GameObject*> m_enemies;
   std::set<ExplosionAnimation*> m_explosionAnimations;
   int m_score;
   std::map<std::string, SpriteParameters*> m_scoreSpriteParameters;

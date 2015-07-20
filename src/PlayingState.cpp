@@ -45,7 +45,7 @@ void PlayingState::initializeNewEnemy() {
                                                 spriteParameters->getImagesToCycle());
    GameObject* enemy = new Enemy(loaderParams);
    m_gameObjects.push_back(enemy);
-   m_enemies.push_back(enemy);
+   m_enemies.insert(enemy);
 }
 
 void PlayingState::draw() {
@@ -74,7 +74,7 @@ void PlayingState::update() {
     initializeNewEnemy();
   }
   m_bulletManager->update();
-  for (std::vector<GameObject*>::iterator i = m_enemies.begin(); i != m_enemies.end(); i++) {
+  for (std::set<GameObject*>::iterator i = m_enemies.begin(); i != m_enemies.end(); i++) {
     GameObject* enemy = *i;
 
   // Did player hit enemy?
