@@ -73,6 +73,8 @@ void PlayingState::update() {
     initializeNewEnemy();
   }
   m_bulletManager->update();
+
+  std::set<GameObject*> enemies_to_remove;
   for (std::set<GameObject*>::iterator i = m_enemies.begin(); i != m_enemies.end(); i++) {
     GameObject* enemy = *i;
 
@@ -92,15 +94,16 @@ void PlayingState::update() {
         ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, enemy->getPosition());
         m_explosionAnimations.insert(explosionAnimation);
         m_gameObjects.insert(explosionAnimation);
-        // TODO if game objects are not ordered, a std::set has simpler removal functions
-        // TODO what are the semantics of erase?  does it null out the object?  because it seems like the line below
-        // causes segfaults because it's attempting to delete the object twice.
-        //m_enemies.erase(std::remove(m_enemies.begin(), m_enemies.end(), enemy), m_enemies.end());
+        enemies_to_remove.insert(enemy);
         m_gameObjects.erase(enemy);
         m_score += 100;
         m_bulletManager->removeBullet(c->getBullet());
       }
     }
+  }
+
+  while (!enemies_to_remove.empty()) {
+    enemies_to_remove.erase(enemies_to_remove.begin());
   }
 
   // TODO possible to use RTTI to identify explosions in game objects list?
