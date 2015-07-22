@@ -31,6 +31,9 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 
 * Player strike puts game into 'between lives' state
 * * explosion is bigger
+* * enemies disappear
+* * ideally a number of planes decrements
+* * * display number of planes remaining
 * Enemy plane shoots
 * Enemy planes move left/right
 * Explosion goes more slowly
