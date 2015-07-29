@@ -20,8 +20,10 @@ public:
 private:
   
   void handleInput();
+  bool canFire();
 
   BulletManager* m_bulletManager;
+  Uint32 m_lastFired;
   
 };
 

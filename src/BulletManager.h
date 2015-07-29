@@ -16,6 +16,7 @@ public:
   void removeBullet(GameObject* bullet);
   void draw();
   void update();
+  bool noBulletsInFlight();
   Collision* checkHit(GameObject* pGameObject);
   bool collided(GameObject* pA, GameObject* pB);
   void clear();

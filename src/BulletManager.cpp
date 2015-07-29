@@ -23,6 +23,10 @@ void BulletManager::draw() {
   }
 }
 
+bool BulletManager::noBulletsInFlight() {
+  return m_bullets.empty();
+}
+
 void BulletManager::update() {
   // TODO is there an iterator that supports removal?
   std::set<GameObject*> to_remove;

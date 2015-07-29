@@ -1,7 +1,9 @@
 #include "Player.h"
 #include "InputHandler.h"
 
-Player::Player(const LoaderParams* pParams) : GameObject(pParams) {}
+Player::Player(const LoaderParams* pParams) : GameObject(pParams) {
+  m_lastFired = 0;
+}
 
 void Player::draw() {
   GameObject::draw();
@@ -42,10 +44,19 @@ void Player::setBulletManager(BulletManager* bulletManager) {
 
 void Player::clean() {}
 
+bool Player::canFire() {
+  Uint32 timeSinceLast = SDL_GetTicks() - m_lastFired;
+  return m_lastFired == 0 || timeSinceLast > 1000 || m_bulletManager->noBulletsInFlight();
+}
+
 void Player::handleInput() {
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
     // TODO generate bullets based on a strategy
     // TODO bullet could contain trajectory
+    if (!canFire()) {
+      return;
+    }
+    m_lastFired = SDL_GetTicks();
     Vector2D* halfPlayer1 = new Vector2D(30, 0);
     Vector2D* halfPlayer2 = new Vector2D(14, 0);
     Vector2D newBullet1Position = m_position + *halfPlayer1;
