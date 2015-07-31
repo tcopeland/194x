@@ -84,6 +84,9 @@ void PlayingState::update() {
       m_explosionAnimations.insert(explosionAnimation);
       m_gameObjects.insert(explosionAnimation);
       enemies_to_remove.insert(enemy);
+      if (m_score >= 100) {
+        m_score -= 100;
+      }
       m_bulletManager->clear();
     }
 

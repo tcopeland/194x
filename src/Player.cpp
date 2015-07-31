@@ -55,11 +55,14 @@ void Player::handleInput() {
     // TODO bullet could contain trajectory
     m_lastFired = SDL_GetTicks();
     Vector2D* halfPlayer1 = new Vector2D(30, 0);
-    Vector2D* halfPlayer2 = new Vector2D(14, 0);
+    Vector2D* halfPlayer2 = new Vector2D(20, 0);
+    Vector2D* halfPlayer3 = new Vector2D(10, 0);
     Vector2D newBullet1Position = m_position + *halfPlayer1;
     m_bulletManager->addBullet(&newBullet1Position);
     Vector2D newBullet2Position = m_position + *halfPlayer2;
     m_bulletManager->addBullet(&newBullet2Position);
+    Vector2D newBullet3Position = m_position + *halfPlayer3;
+    m_bulletManager->addBullet(&newBullet3Position);
     // SoundManager::Instance()->play_sound("bang");
   }
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT)) {
