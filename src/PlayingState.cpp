@@ -83,6 +83,7 @@ void PlayingState::update() {
       ExplosionAnimation* explosionAnimation = ExplosionAnimation::createAtPosition(m_spritesheet, m_player->getPosition());
       m_explosionAnimations.insert(explosionAnimation);
       m_gameObjects.insert(explosionAnimation);
+      enemies_to_remove.insert(enemy);
       m_bulletManager->clear();
     }
 
@@ -103,7 +104,9 @@ void PlayingState::update() {
   }
 
   while (!enemies_to_remove.empty()) {
-    enemies_to_remove.erase(enemies_to_remove.begin());
+    GameObject* obj = *enemies_to_remove.begin();
+    m_enemies.erase(obj);
+    enemies_to_remove.erase(obj);
   }
 
   // TODO possible to use RTTI to identify explosions in game objects list?

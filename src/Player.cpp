@@ -50,12 +50,9 @@ bool Player::canFire() {
 }
 
 void Player::handleInput() {
-  if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
+  if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE) && canFire()) {
     // TODO generate bullets based on a strategy
     // TODO bullet could contain trajectory
-    if (!canFire()) {
-      return;
-    }
     m_lastFired = SDL_GetTicks();
     Vector2D* halfPlayer1 = new Vector2D(30, 0);
     Vector2D* halfPlayer2 = new Vector2D(14, 0);
