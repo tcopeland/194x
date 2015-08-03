@@ -109,6 +109,7 @@ void PlayingState::update() {
   while (!enemies_to_remove.empty()) {
     GameObject* obj = *enemies_to_remove.begin();
     m_enemies.erase(obj);
+    m_gameObjects.erase(obj);
     enemies_to_remove.erase(obj);
   }
 
