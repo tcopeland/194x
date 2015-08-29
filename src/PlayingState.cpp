@@ -75,8 +75,7 @@ void PlayingState::update() {
   m_bulletManager->update();
 
   std::set<GameObject*> enemies_to_remove;
-  for (std::set<GameObject*>::iterator i = m_enemies.begin(); i != m_enemies.end(); i++) {
-    GameObject* enemy = *i;
+  for (auto& enemy : m_enemies) {
 
   // Did player hit enemy?
     if (m_bulletManager->collided(m_player, enemy)) {
