@@ -55,6 +55,7 @@ http://wiki.libsdl.org/moin.fcg/Tutorials
 http://lazyfoo.net/SDL_tutorials/lesson01/index2.php
 http://www.siteduzero.com/forum/sujet/sdl-conflicting-types-for-a-function-53095
 http://wiki.libsdl.org/SDL_Keycode
+http://cs.brown.edu/~jak/proglang/cpp/stltut/tut.html
 
 Art:
 
