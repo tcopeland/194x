@@ -58,11 +58,11 @@ void Player::handleInput() {
     Vector2D* halfPlayer2 = new Vector2D(20, 0);
     Vector2D* halfPlayer3 = new Vector2D(10, 0);
     Vector2D newBullet1Position = m_position + *halfPlayer1;
-    m_bulletManager->addBullet(&newBullet1Position);
+    m_bulletManager->addBullet(&newBullet1Position, new Vector2D(2, -3));
     Vector2D newBullet2Position = m_position + *halfPlayer2;
-    m_bulletManager->addBullet(&newBullet2Position);
+    m_bulletManager->addBullet(&newBullet2Position, NULL);
     Vector2D newBullet3Position = m_position + *halfPlayer3;
-    m_bulletManager->addBullet(&newBullet3Position);
+    m_bulletManager->addBullet(&newBullet3Position, new Vector2D(-2, -3));
     // SoundManager::Instance()->play_sound("bang");
   }
   if (InputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT)) {

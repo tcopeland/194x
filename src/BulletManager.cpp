@@ -4,7 +4,10 @@ BulletManager::BulletManager(Spritesheet* spritesheet) {
   m_spritesheet = spritesheet;
 }
 
-void BulletManager::addBullet(Vector2D* position) {
+void BulletManager::addBullet(Vector2D* position, Vector2D* velocity) {
+  if (velocity == NULL) {
+    velocity = new Vector2D(0, -3);
+  }
   SpriteParameters* bulletSpriteParameters = m_spritesheet->getSpriteParameters("bullet");
   LoaderParams* loaderParams = new LoaderParams(bulletSpriteParameters->getHorizontalOffset(),
                                                 bulletSpriteParameters->getVerticalOffset(),
@@ -13,7 +16,7 @@ void BulletManager::addBullet(Vector2D* position) {
                                                 bulletSpriteParameters->getHeight(),
                                                 bulletSpriteParameters->getImagesToCycle());
   GameObject* bullet = new GameObject(loaderParams);
-  bullet->setVelocity(*(new Vector2D(0, -3)));
+  bullet->setVelocity(*(velocity));
   m_bullets.insert(bullet);
 }
 

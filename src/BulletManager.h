@@ -12,7 +12,7 @@ class BulletManager {
 public:
 
   BulletManager(Spritesheet* spritesheet);
-  void addBullet(Vector2D* position);
+  void addBullet(Vector2D* position, Vector2D* velocity);
   void removeBullet(GameObject* bullet);
   void draw();
   void update();
