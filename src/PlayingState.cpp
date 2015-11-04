@@ -2,6 +2,7 @@
 
 PlayingState::PlayingState(Spritesheet* spritesheet) : GameState(spritesheet) {
   m_spritesheet = spritesheet;
+  m_enemyGenerator = new EnemyGenerator(spritesheet);
   m_score = 0;
   m_scoreSpriteParameters[std::to_string('0')] = m_spritesheet->getSpriteParameters("zero");
   m_scoreSpriteParameters[std::to_string('1')] = m_spritesheet->getSpriteParameters("one");
@@ -33,20 +34,6 @@ void PlayingState::initializePlayer() {
   m_gameObjects.insert(m_player);
 }
 
-void PlayingState::initializeNewEnemy() {
-  SpriteParameters *spriteParameters = m_spritesheet->getSpriteParameters("enemy");
-  int randX = 200 + (rand() % 600 );
-  LoaderParams* loaderParams = new LoaderParams(spriteParameters->getHorizontalOffset(),
-                                                spriteParameters->getVerticalOffset(),
-                                                randX, 50,
-                                                spriteParameters->getWidth(),
-                                                spriteParameters->getHeight(),
-                                                spriteParameters->getImagesToCycle());
-   GameObject* enemy = new Enemy(loaderParams);
-   m_gameObjects.insert(enemy);
-   m_enemies.insert(enemy);
-}
-
 void PlayingState::draw() {
   m_bulletManager->draw();
   drawScore();
@@ -69,9 +56,12 @@ void PlayingState::loadAndDraw(SpriteParameters* sp, int x) {
 }
 
 void PlayingState::update() {
-  if ((rand() % 1000) > 900) {
-    initializeNewEnemy();
+  Enemy* newEnemy = m_enemyGenerator->generate();
+  if (newEnemy) {
+    m_gameObjects.insert(newEnemy);
+    m_enemies.insert(newEnemy);
   }
+
   m_bulletManager->update();
 
   std::set<GameObject*> enemies_to_remove;

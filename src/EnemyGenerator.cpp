@@ -1,0 +1,23 @@
+#include "EnemyGenerator.h"
+
+EnemyGenerator::EnemyGenerator(Spritesheet* spriteSheet) {
+  m_spritesheet = spriteSheet;
+}
+
+Enemy* EnemyGenerator::generate() {
+  m_ticksSinceLast += 1;
+  if (m_ticksSinceLast > 100) {
+    m_ticksSinceLast = 0;
+    SpriteParameters *spriteParameters = m_spritesheet->getSpriteParameters("enemy");
+    int initialXPosition = 10;
+    LoaderParams* loaderParams = new LoaderParams(spriteParameters->getHorizontalOffset(),
+                                                  spriteParameters->getVerticalOffset(),
+                                                  initialXPosition, 50,
+                                                  spriteParameters->getWidth(),
+                                                  spriteParameters->getHeight(),
+                                                  spriteParameters->getImagesToCycle());
+     return new Enemy(loaderParams);
+  } else {
+    return NULL;
+  }
+}

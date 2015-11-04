@@ -6,6 +6,7 @@
 #include "BulletManager.h"
 #include "Enemy.h"
 #include "ExplosionAnimation.h"
+#include "EnemyGenerator.h"
 
 class PlayingState : public GameState {
 
@@ -30,6 +31,7 @@ private:
   std::set<GameObject*> m_enemies;
   std::set<ExplosionAnimation*> m_explosionAnimations;
   int m_score;
+  EnemyGenerator* m_enemyGenerator;
   std::map<std::string, SpriteParameters*> m_scoreSpriteParameters;
 
 };

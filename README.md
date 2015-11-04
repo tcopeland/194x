@@ -29,6 +29,8 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 
 #### TODO 
 
+* Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
+* * pass a Path object into each Enemy
 * Player strike puts game into 'between lives' state
 * * explosion is bigger
 * * enemies disappear
@@ -38,7 +40,6 @@ Some not-so-helpful STL docs are at file:///usr/local/gcc-4.9/include/c++/4.9.0/
 * Enemy planes move left/right
 * Explosion goes more slowly
 * Enemy bullet affects player sprite
-* Waves of enemies - e.g, 6 planes come down from upper left and exit on upper right
 * Destruction of enemy plane leaves power up
 * * power up types: multiple bullets, faster moves, a bomb, faster rate of fire
 * Player has limited number of lives
