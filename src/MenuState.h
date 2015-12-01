@@ -1,5 +1,4 @@
-#ifndef __MENU_STATE__
-#define __MENU_STATE__
+#pragma once
 
 #include "GameState.h"
 #include "QuitLabel.h"
@@ -14,5 +13,3 @@ public:
 private:
 
 };
-
-#endif

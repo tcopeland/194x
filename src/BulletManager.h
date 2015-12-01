@@ -1,5 +1,4 @@
-#ifndef __BULLET_MANAGER__
-#define __BULLET_MANAGER__
+#pragma once
 
 #include "Vector2D.h"
 #include "GameObject.h"
@@ -29,5 +28,3 @@ private:
   Spritesheet* m_spritesheet;
 
 };
-
-#endif

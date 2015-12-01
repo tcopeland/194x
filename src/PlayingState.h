@@ -1,5 +1,4 @@
-#ifndef __PLAYING_STATE__
-#define __PLAYING_STATE__
+#pragma once
 
 #include <set>
 #include "GameState.h"
@@ -35,5 +34,3 @@ private:
   std::map<std::string, SpriteParameters*> m_scoreSpriteParameters;
 
 };
-
-#endif

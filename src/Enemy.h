@@ -1,5 +1,4 @@
-#ifndef __ENEMY__
-#define __ENEMY__
+#pragma once
 
 #include "SDL.h"
 #include "GameObject.h"
@@ -14,5 +13,3 @@ public:
   void update();
 
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef __SOUND_MANAGER__
-#define __SOUND_MANAGER__
+#pragma once
 
 #include <map>
 #include <iostream>
@@ -32,5 +31,3 @@ private:
 };
 
 typedef SoundManager TheSoundManager;
-
-#endif

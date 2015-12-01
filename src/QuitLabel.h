@@ -1,5 +1,4 @@
-#ifndef __QUIT_LABEL__
-#define __QUIT_LABEL__
+#pragma once
 
 #include "SDL.h"
 #include "GameObject.h"
@@ -20,5 +19,3 @@ private:
   void handleInput();
 
 };
-
-#endif

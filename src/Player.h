@@ -1,5 +1,4 @@
-#ifndef __PLAYER__
-#define __PLAYER__
+#pragma once
 
 #include "SDL.h"
 #include "GameObject.h"
@@ -26,5 +25,3 @@ private:
   Uint32 m_lastFired;
   
 };
-
-#endif

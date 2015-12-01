@@ -1,5 +1,4 @@
-#ifndef __COLLISION__
-#define __COLLISION__
+#pragma once
 
 #include "GameObject.h"
 
@@ -20,5 +19,3 @@ private:
   GameObject* m_bullet;
 
 };
-
-#endif

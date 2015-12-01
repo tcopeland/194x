@@ -1,5 +1,4 @@
-#ifndef __SPRITE_PARAMETERS__
-#define __SPRITE_PARAMETERS__
+#pragma once
 
 class SpriteParameters {
 
@@ -22,6 +21,3 @@ private:
   int m_imagesToCycle;
 
 };
-
-
-#endif

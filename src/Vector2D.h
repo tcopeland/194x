@@ -1,5 +1,4 @@
-#ifndef __VECTOR_2D__
-#define __VECTOR_2D__
+#pragma once
 
 #include "math.h"
 
@@ -79,5 +78,3 @@ private:
   float m_y;
 
 };
-
-#endif

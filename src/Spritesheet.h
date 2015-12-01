@@ -1,5 +1,4 @@
-#ifndef __SPRITESHEET__
-#define __SPRITESHEET__
+#pragma once
 
 #include <iostream>
 #include <map>
@@ -25,5 +24,3 @@ private:
   std::map<std::string, SpriteParameters*> m_sprites;
 
 };
-
-#endif

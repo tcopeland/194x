@@ -1,5 +1,4 @@
-#ifndef __TextureManager__
-#define __TextureManager__
+#pragma once
 
 #include "SDL.h"
 #include "SDL_image.h"
@@ -31,5 +30,3 @@ private:
 };
 
 typedef TextureManager TheTextureManager;
-
-#endif

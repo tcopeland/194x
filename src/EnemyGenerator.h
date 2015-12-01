@@ -1,5 +1,4 @@
-#ifndef __ENEMY_GENERATOR__
-#define __ENEMY_GENERATOR__
+#pragma once
 
 #include "Spritesheet.h"
 #include "Enemy.h"
@@ -18,5 +17,3 @@ private:
   int m_ticksSinceLast;
 
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef __GAME_STATE__
-#define __GAME_STATE__
+#pragma once
 
 #include <vector>
 #include <set>
@@ -23,5 +22,3 @@ protected:
   std::set<GameObject*> m_gameObjects;
 
 };
-
-#endif

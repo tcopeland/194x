@@ -1,5 +1,4 @@
-#ifndef __EXPLOSION_ANIMATION__
-#define __EXPLOSION_ANIMATION__
+#pragma once
 
 #include "GameObject.h"
 #include "Vector2D.h"
@@ -31,5 +30,3 @@ protected:
 
   int m_counter;
 };
-
-#endif

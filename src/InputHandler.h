@@ -1,5 +1,4 @@
-#ifndef __INPUT_HANDLER__
-#define __INPUT_HANDLER__
+#pragma once
 
 #include "SDL.h"
 #include "Game.h"
@@ -32,6 +31,3 @@ private:
 	void onKeyUp();
 	void onKeyDown();
 };
-
-
-#endif

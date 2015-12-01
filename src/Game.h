@@ -1,5 +1,4 @@
-#ifndef __Game__
-#define __Game__
+#pragma once
 
 #include "SDL.h"
 #include "SDL_image.h"
@@ -58,5 +57,3 @@ private:
 };
 
 typedef Game TheGame;
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef __GAME_OBJECT__
-#define __GAME_OBJECT__
+#pragma once
 
 #include "LoaderParams.h"
 #include "Vector2D.h"
@@ -31,4 +30,3 @@ protected:
   Vector2D m_acceleration;
 
 };
-#endif

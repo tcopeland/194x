@@ -1,5 +1,4 @@
-#ifndef __LOADER_PARAMS__
-#define __LOADER_PARAMS__
+#pragma once
 
 #include <iostream>
 
@@ -31,5 +30,3 @@ private:
   int m_imagesToCycle;
 	
 };
-
-#endif
