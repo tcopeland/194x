@@ -45,7 +45,7 @@ void PlayingState::drawScore() {
   std::reverse(s.begin(), s.end());
   int current_x = 65;
   // TODO how to avoid these std::string to char conversions?
-  for (char& c : s) {
+  for (auto c : s) {
     loadAndDraw(m_scoreSpriteParameters[std::to_string(c)], current_x);
     current_x -= 15;
   }
