@@ -1,9 +1,12 @@
 #include "Enemy.h"
 
-Enemy::Enemy(const LoaderParams* pParams) : GameObject(pParams) {}
+Enemy::Enemy(const LoaderParams* pParams, FlightPath* flightPath) : GameObject(pParams) {
+  m_flightPath = flightPath;
+}
 
 void Enemy::update() {
-  m_velocity.setY(1);
-  m_velocity.setX(1);
+  Vector2D* velocity = m_flightPath->getPath(m_position.getX(), m_position.getY());
+  m_velocity.setX(velocity->getX());
+  m_velocity.setY(velocity->getY());
   GameObject::update();
 }
