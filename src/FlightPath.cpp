@@ -11,7 +11,6 @@ Vector2D* FlightPath::getPath(int posX, int posY) {
   } else {
     newY = 2;
   }
-  Vector2D* v = new Vector2D(newX, newY);
-  return v;
+  return new Vector2D(newX, newY);
 }
 
