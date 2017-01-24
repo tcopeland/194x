@@ -6,7 +6,7 @@ EnemyGenerator::EnemyGenerator(Spritesheet* spriteSheet) {
 
 Enemy* EnemyGenerator::generate() {
   m_ticksSinceLast += 1;
-  if (m_ticksSinceLast > 100) {
+  if (m_ticksSinceLast > 30) {
     m_ticksSinceLast = 0;
     SpriteParameters *spriteParameters = m_spritesheet->getSpriteParameters("enemy");
     int initialXPosition = 10;

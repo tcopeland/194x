@@ -3,13 +3,15 @@
 FlightPath::FlightPath() {}
 
 Vector2D* FlightPath::getPath(int posX, int posY) {
-  int newX = 3;
+  int newX = 4;
   int newY = 0;
-  // object past screen midpoint?
-  if (posX > 400) {
-    newY = -2;
-  } else {
-    newY = 2;
+  if (posX > 700) {
+    newX = 0;
+    newY = 3;
+  }
+  if (posY > 200) {
+    newX = -4;
+    newY = 0;
   }
   return new Vector2D(newX, newY);
 }
