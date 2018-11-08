@@ -3,7 +3,7 @@
 #include <map>
 #include <iostream>
 #include <string>
-#include "SDL_Mixer.h"
+#include "SDL_mixer.h"
 
 class SoundManager {
 
